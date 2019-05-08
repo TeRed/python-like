@@ -152,13 +152,13 @@ funcdef
 
 /// parameters: '(' [typedargslist] ')'
 parameters
- : '(' typedargslist? ')'
+ : '(' argslist? ')'
  ;
 
 /// typedargslist: (tfpdef ['=' test] (',' tfpdef ['=' test])* [','
 ///                ['*' [tfpdef] (',' tfpdef ['=' test])* [',' '**' tfpdef] | '**' tfpdef]]
 ///              |  '*' [tfpdef] (',' tfpdef ['=' test])* [',' '**' tfpdef] | '**' tfpdef)
-typedargslist
+argslist
  : NAME ( '=' test )? ( ',' NAME ( '=' test )? )*
  ;
 
@@ -180,15 +180,15 @@ small_stmt
  | PASS
  | BREAK
  | CONTINUE
- | RETURN testlist?
+ | RETURN test?
  ;
 
 /// expr_stmt: testlist_star_expr (augassign (yield_expr|testlist) |
 ///                      ('=' (yield_expr|testlist_star_expr))*)
 expr_stmt
- : testlist ( augassign testlist
-              | ( '=' testlist )*
-            )
+ : test ( augassign test
+          | ( '=' test )*
+        )
  ;
 
 /// augassign: ('+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' |
@@ -215,7 +215,7 @@ if_stmt
 
 /// while_stmt: 'while' test ':' suite ['else' ':' suite]
 while_stmt
- : WHILE test ':' suite ( ELSE ':' suite )?
+ : WHILE test ':' suite
  ;
 
 /// suite: simple_stmt | NEWLINE INDENT stmt+ DEDENT
@@ -226,7 +226,7 @@ suite
 
 /// test: or_test ['if' or_test 'else' test] | lambdef
 test
- : or_test ( IF or_test ELSE test )?
+ : or_test
  ;
  
 /// or_test: and_test ('or' and_test)*
@@ -261,10 +261,6 @@ comp_op
  | '<='
  | '<>'
  | '!='
- | IN
- | NOT IN
- | IS
- | IS NOT
  ;
 
 /// arith_expr: term (('+'|'-') term)*
@@ -296,6 +292,7 @@ factor
 atom
  : '[' testlist_comp? ']'
  | NAME
+ | NAME '(' testlist_comp ')'
  | number
  | str+
  | NONE
@@ -306,11 +303,6 @@ atom
 /// testlist_comp: test ( comp_for | (',' test)* [','] )
 testlist_comp
  : test ( ',' test )*
- ;
-
-/// testlist: test (',' test)* [',']
-testlist
- : test ( ',' test )* ','?
  ;
 
 str
