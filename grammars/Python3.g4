@@ -259,7 +259,6 @@ comp_op
  | '=='
  | '>='
  | '<='
- | '<>'
  | '!='
  ;
 
@@ -415,8 +414,7 @@ GREATER_THAN : '>';
 EQUALS : '==';
 GT_EQ : '>=';
 LT_EQ : '<=';
-NOT_EQ_1 : '<>';
-NOT_EQ_2 : '!=';
+NOT_EQ : '!=';
 ADD_ASSIGN : '+=';
 SUB_ASSIGN : '-=';
 MULT_ASSIGN : '*=';
