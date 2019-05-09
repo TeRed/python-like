@@ -1,5 +1,5 @@
 # Fibbonacci 
-def fibo(size):
+def fibo(size = 0):
     a = 1
     b = 1  
     
@@ -16,6 +16,7 @@ def fibo(size):
         size -= 1
 
 fibo(7)
+fibo()
 
 
 # Simple print
@@ -82,3 +83,49 @@ def getSec(houers):
     return sec
 
 print(getSec(3))
+
+
+# empty function
+def passTest():
+    pass
+
+print(passTest())
+
+
+
+def funInFun():
+    val = getSec(1)
+    print(val)
+    return getSec(2)
+
+print(funInFun())
+ 
+
+if 1 > 0: print("Hello"); print("Wolrd")
+
+
+a = b = 10
+
+if 1 > 10:
+    pass
+elif 2 > 10:
+    pass
+elif 20 < 30:
+    print("Elif works")
+else:
+    pass
+
+
+def matFun():
+    return 4 + 5 * 2 / 10
+
+if 2 > 10 and 1 < 2 and 4 == 5 or 4 <= 1 or not 2 >= 1 and 1 != 0 :
+    print(True)
+else:
+    print(False)
+
+def retNone():
+    return None
+
+a.size()
+
