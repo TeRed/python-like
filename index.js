@@ -3,18 +3,20 @@ const Python3Lexer = require('./lib/Python3Lexer.js');
 const Python3Parser = require('./lib/Python3Parser.js');
 const PythonGenerator = require('./codegeneration/PythonGenerator.js');
 const ErrorListener = require('./codegeneration/ErrorListener.js');
+const fs = require('fs');
 
-const input =
-`def sum(a, b):
-  return a + b
+const input = fs.readFileSync('./example.py').toString();
+console.log(input);
+// `def sum(a, b):
+//   return a + b
   
-while a > b:
-  a = 8
-  if b == 7:
-    break
+// while a > b:
+//   a = 8
+//   if b == 7:
+//     break
 
-sum(2, 3)
-`;
+// sum(2, 3)
+// `;
 // `a = 5 != 33
 // b = 200
 // while b > a:
@@ -29,6 +31,7 @@ const lexer = new Python3Lexer.Python3Lexer(chars);
 lexer.strictMode = false; // do not use js strictMode
 
 const tokens = new antlr4.CommonTokenStream(lexer);
+console.log(tokens);
 const parser = new Python3Parser.Python3Parser(tokens);
 const listener = new ErrorListener();
 

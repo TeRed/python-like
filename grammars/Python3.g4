@@ -282,46 +282,42 @@ term
 factor
  : '+' factor
  | '-' factor
- | atom
+ | power
  ;
 
-/// atom: ('(' [yield_expr|testlist_comp] ')' |
-///        '[' [testlist_comp] ']' |
+/// power: atom trailer* ['**' factor]
+power
+ : atom trailer*
+ ;
+
+/// atom: ('(' [yield_expr|testlist] ')' |
+///        '[' [testlist] ']' |
 ///        '{' [dictorsetmaker] '}' |
 ///        NAME | NUMBER | STRING+ | '...' | 'None' | 'True' | 'False')
 atom
- : '[' testlist_comp? ']'
+ : '(' ( testlist )? ')'
  | NAME
- | NAME '(' testlist_comp ')'
  | number
- | str+
+ | STRING_LITERAL+
  | NONE
  | TRUE
  | FALSE
  ;
 
-/// testlist_comp: test ( comp_for | (',' test)* [','] )
-testlist_comp
+/// testlist: test ( comp_for | (',' test)* [','] )
+testlist
  : test ( ',' test )*
  ;
 
-str
- : STRING_LITERAL
- | BYTES_LITERAL
+/// trailer: '(' [arglist] ')' | '[' subscriptlist ']' | '.' NAME
+trailer
+ : '(' testlist? ')'
+ | '.' NAME
  ;
 
 number
- : integer
- | FLOAT_NUMBER
- | IMAG_NUMBER
- ;
-
-/// integer        ::=  decimalinteger | octinteger | hexinteger | bininteger
-integer
  : DECIMAL_INTEGER
- | OCT_INTEGER
- | HEX_INTEGER
- | BIN_INTEGER
+ | FLOAT_NUMBER
  ;
 
 /*
@@ -334,17 +330,12 @@ IF : 'if';
 ELIF : 'elif';
 ELSE : 'else';
 WHILE : 'while';
-FOR : 'for';
-IN : 'in';
 OR : 'or';
 AND : 'and';
 NOT : 'not';
-IS : 'is';
 NONE : 'None';
 TRUE : 'True';
 FALSE : 'False';
-CLASS : 'class';
-DEL : 'del';
 PASS : 'pass';
 CONTINUE : 'continue';
 BREAK : 'break';
@@ -395,31 +386,10 @@ STRING_LITERAL
  : [uU]? [rR]? ( SHORT_STRING | LONG_STRING )
  ;
 
-/// bytesliteral   ::=  bytesprefix(shortbytes | longbytes)
-/// bytesprefix    ::=  "b" | "B" | "br" | "Br" | "bR" | "BR"
-BYTES_LITERAL
- : [bB] [rR]? ( SHORT_BYTES | LONG_BYTES )
- ;
-
 /// decimalinteger ::=  nonzerodigit digit* | "0"+
 DECIMAL_INTEGER
  : NON_ZERO_DIGIT DIGIT*
  | '0'+
- ;
-
-/// octinteger     ::=  "0" ("o" | "O") octdigit+
-OCT_INTEGER
- : '0' [oO] OCT_DIGIT+
- ;
-
-/// hexinteger     ::=  "0" ("x" | "X") hexdigit+
-HEX_INTEGER
- : '0' [xX] HEX_DIGIT+
- ;
-
-/// bininteger     ::=  "0" ("b" | "B") bindigit+
-BIN_INTEGER
- : '0' [bB] BIN_DIGIT+
  ;
 
 /// floatnumber   ::=  pointfloat | exponentfloat
@@ -428,36 +398,18 @@ FLOAT_NUMBER
  | EXPONENT_FLOAT
  ;
 
-/// imagnumber ::=  (floatnumber | intpart) ("j" | "J")
-IMAG_NUMBER
- : ( FLOAT_NUMBER | INT_PART ) [jJ]
- ;
-
 DOT : '.';
-ELLIPSIS : '...';
 STAR : '*';
 OPEN_PAREN : '(' {this.opened++;};
 CLOSE_PAREN : ')' {this.opened--;};
 COMMA : ',';
 COLON : ':';
 SEMI_COLON : ';';
-POWER : '**';
 ASSIGN : '=';
-OPEN_BRACK : '[' {this.opened++;};
-CLOSE_BRACK : ']' {this.opened--;};
-OR_OP : '|';
-XOR : '^';
-AND_OP : '&';
-LEFT_SHIFT : '<<';
-RIGHT_SHIFT : '>>';
 ADD : '+';
 MINUS : '-';
 DIV : '/';
 MOD : '%';
-IDIV : '//';
-NOT_OP : '~';
-OPEN_BRACE : '{' {this.opened++;};
-CLOSE_BRACE : '}' {this.opened--;};
 LESS_THAN : '<';
 GREATER_THAN : '>';
 EQUALS : '==';
@@ -465,21 +417,11 @@ GT_EQ : '>=';
 LT_EQ : '<=';
 NOT_EQ_1 : '<>';
 NOT_EQ_2 : '!=';
-AT : '@';
-ARROW : '->';
 ADD_ASSIGN : '+=';
 SUB_ASSIGN : '-=';
 MULT_ASSIGN : '*=';
-AT_ASSIGN : '@=';
 DIV_ASSIGN : '/=';
 MOD_ASSIGN : '%=';
-AND_ASSIGN : '&=';
-OR_ASSIGN : '|=';
-XOR_ASSIGN : '^=';
-LEFT_SHIFT_ASSIGN : '<<=';
-RIGHT_SHIFT_ASSIGN : '>>=';
-POWER_ASSIGN : '**=';
-IDIV_ASSIGN : '//=';
 
 SKIP_
  : ( SPACES | COMMENT | LINE_JOINING ) -> skip
