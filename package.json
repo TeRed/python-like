@@ -1,16 +1,15 @@
 {
-  "name": "js-runtime",
+  "name": "python-2-js-poc",
   "version": "1.0.0",
   "description": "Source to source compiler using ANTLR",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "compile": "npm run antlr4-js",
-    "antlr4-js": "java -Xmx500M -cp '/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH' org.antlr.v4.Tool  -Dlanguage=JavaScript -lib grammars -o lib -visitor -Xexact-output-dir grammars/Python3.g4",
-    "antlr4-js-ecma": "java -Xmx500M -cp '/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH' org.antlr.v4.Tool  -Dlanguage=JavaScript -lib grammars -o lib -visitor -Xexact-output-dir grammars/ECMAScript.g4",
+    "antlr4-js": "java -Xmx500M -cp '/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH' org.antlr.v4.Tool  -Dlanguage=JavaScript -lib grammars -o lib -visitor -no-listener -Xexact-output-dir grammars/Python3.g4",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Alena Khineika <alena.khineika@gmail.com>",
+  "author": "Albert Duz",
   "license": "ISC",
   "dependencies": {
     "antlr4": "^4.7.1"
