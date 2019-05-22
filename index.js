@@ -6,7 +6,6 @@ const ErrorListener = require('./codegeneration/ErrorListener.js');
 const fs = require('fs');
 
 const input = fs.readFileSync('./example.py').toString();
-console.log(input);
 
 const chars = new antlr4.InputStream(input);
 const lexer = new Python3Lexer.Python3Lexer(chars);
