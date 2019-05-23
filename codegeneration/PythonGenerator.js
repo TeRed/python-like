@@ -19,39 +19,41 @@ class Visitor extends Python3Visitor {
     return code.trim();
   }
 
+  visitWhile_stmt(ctx) {
+    const [whileStmt, test, colon, suite] = ctx.children;
+
+    if (test.getText().endsWith(')'))
+      var testVisited = this.visit(test);
+    else
+      var testVisited = `(${this.visit(test)})`;
+
+    return [whileStmt, testVisited, '{', this.visit(suite), '}'].join('');
+  }
+
   visitFuncdef(ctx) {
     const [def, name, params, colon, suite] = ctx.children;
     return 'function ' + name + this.visit(params) + '{' + this.visit(suite) + '}';
   }
-
-  // /// if_stmt: 'if' test ':' suite ('elif' test ':' suite)* ['else' ':' suite]
-  // if_stmt
-  //   : IF test ':' suite(ELIF test ':' suite)* (ELSE ':' suite)?
-  // ;
 
   visitIf_stmt(ctx) {
     let code = '';
     const [ifStmt, test, colon, suite, ...optional] = ctx.children;
     code = 'if(' + this.visit(test) + '){' + this.visit(suite) + '}';
 
-    if (optional.length % 2 !== 0) {
-      var elseStmt = optional.slice(-3);
 
-      var elifStmt = optional.splice(-3, 3);
-
-      console.log('Elif:', elifStmt);
-    } else if (optional.length > 0) {
-      var elifStmt = optional;
-    }
-
-    if (elifStmt) {
-      for (let child = 0; child < elifStmt.length; child += 4) {
-        code += 'else if(' + this.visit(elifStmt[child + 1]) + '){' + this.visit(elifStmt[child + 3]) + '}';
+    if (optional.length % 2 === 0) { // Only elifs
+      for (let i = 0; i < optional.length; i += 4) {
+        code += 'else if(' + this.visit(optional[i + 1]) + '){' + this.visit(optional[i + 3]) + '}';
       }
     }
-
-    if (elseStmt) {
-      code += 'else' + '{' + this.visit(elseStmt[2]) + '}';
+    else if (optional.length === 3) { //Only else
+      code += ['else', '{', this.visit(optional[2]), '}'].join('');
+    }
+    else {
+      for (let i = 0; optional.length - i > 3; i += 4) {
+        code += 'else if(' + this.visit(optional[i + 1]) + '){' + this.visit(optional[i + 3]) + '}';
+      }
+      code += ['else', '{', this.visit(optional[optional.length - 1]), '}'].join('');
     }
 
     return code;
@@ -67,10 +69,18 @@ class Visitor extends Python3Visitor {
   }
 
   visitTerminal(ctx) {
-    const temrinal = ctx.getText();
-    if (temrinal === 'print') return 'console.log';
+    const map = new Map();
+    map.set('print', 'console.log');
+    map.set('pass', 'null');
 
-    return temrinal;
+    const terminal = ctx.getText();
+    if (map.has(terminal)) return map.get(terminal);
+    else return terminal;
+  }
+
+  visitSuite(ctx) {
+    console.log('Suite: ', ctx.getText());
+    return this.visitChildren(ctx);
   }
 }
 

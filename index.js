@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const antlr4 = require('antlr4');
 const Python3Lexer = require('./lib/Python3Lexer.js');
 const Python3Parser = require('./lib/Python3Parser.js');
