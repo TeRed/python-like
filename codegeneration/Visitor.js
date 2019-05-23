@@ -8,7 +8,6 @@ const {
 class Visitor extends Python3Visitor {
 
   visitChildren(ctx) {
-    // console.log(ctx.getText());
     let code = '';
 
     for (let i = 0; i < ctx.getChildCount(); i++) {
@@ -72,15 +71,11 @@ class Visitor extends Python3Visitor {
     const map = new Map();
     map.set('print', 'console.log');
     map.set('pass', 'null');
+    map.set('<EOF>', '');
 
     const terminal = ctx.getText();
     if (map.has(terminal)) return map.get(terminal);
     else return terminal;
-  }
-
-  visitSuite(ctx) {
-    console.log('Suite: ', ctx.getText());
-    return this.visitChildren(ctx);
   }
 }
 
