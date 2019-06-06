@@ -11,12 +11,18 @@
     "build": "npm run clean && npm run compile",
     "compile": "npm run antlr4-js",
     "antlr4-js": "java -Xmx500M -cp '/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH' org.antlr.v4.Tool  -Dlanguage=JavaScript -lib grammars -o target -visitor -no-listener -Xexact-output-dir grammars/Python3.g4",
-    "clean": "rm -rf target"
+    "clean": "rm -rf target",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
   },
   "author": "Albert Duz",
   "license": "MIT",
   "dependencies": {
     "antlr4": "^4.7.1",
     "js-beautify": "^1.10.0"
+  },
+  "devDependencies": {
+    "docz": "^1.2.0",
+    "docz-theme-default": "^1.2.0"
   }
 }
