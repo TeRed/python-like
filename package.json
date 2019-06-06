@@ -1,6 +1,6 @@
 {
   "name": "python-2-js-poc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Source to source compiler using ANTLR",
   "main": "index.js",
   "bin": {
@@ -8,11 +8,13 @@
   },
   "scripts": {
     "start": "node index.js",
+    "build": "npm run clean && npm run compile",
     "compile": "npm run antlr4-js",
-    "antlr4-js": "java -Xmx500M -cp '/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH' org.antlr.v4.Tool  -Dlanguage=JavaScript -lib grammars -o lib -visitor -no-listener -Xexact-output-dir grammars/Python3.g4"
+    "antlr4-js": "java -Xmx500M -cp '/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH' org.antlr.v4.Tool  -Dlanguage=JavaScript -lib grammars -o target -visitor -no-listener -Xexact-output-dir grammars/Python3.g4",
+    "clean": "rm -rf target"
   },
   "author": "Albert Duz",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "antlr4": "^4.7.1",
     "js-beautify": "^1.10.0"
