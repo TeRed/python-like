@@ -31,7 +31,17 @@ class Visitor extends Python3Visitor {
     return ctx.children.map(it => this.visit(it)).join(' ');
   }
 
-  // visitExpr_stmt(ctx) {}
+  visitExpr_stmt(ctx) {
+    const [variable, sign, ...rest] = ctx.children;
+
+    const expr = this.visitChildren(ctx);
+
+    if(sign && sign.getText() === '=') {
+      return 'var ' + expr;
+    }
+
+    return expr;
+  }
 
   // visitAugassign(ctx) {}
 
