@@ -129,3 +129,10 @@ def retNone():
 
 # a.size()
 
+
+a = [19, 20, 30]
+
+print(a[0])
+
+for i in [1,2,3]:
+    print(i)

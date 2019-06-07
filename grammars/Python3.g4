@@ -205,6 +205,7 @@ augassign
 compound_stmt
  : if_stmt
  | while_stmt
+ | for_stmt
  | funcdef
  ;
 
@@ -216,6 +217,10 @@ if_stmt
 /// while_stmt: 'while' test ':' suite ['else' ':' suite]
 while_stmt
  : WHILE test ':' suite
+ ;
+
+for_stmt
+ : 'for' atom 'in' testlist ':' suite
  ;
 
 /// suite: simple_stmt | NEWLINE INDENT stmt+ DEDENT
@@ -295,6 +300,7 @@ power
 ///        NAME | NUMBER | STRING+ | '...' | 'None' | 'True' | 'False')
 atom
  : '(' ( testlist )? ')'
+ | '[' (testlist)? ']'
  | NAME
  | number
  | STRING_LITERAL+
@@ -311,6 +317,7 @@ testlist
 /// trailer: '(' [arglist] ')' | '[' subscriptlist ']' | '.' NAME
 trailer
  : '(' testlist? ')'
+ | '[' test ']'
  | '.' NAME
  ;
 

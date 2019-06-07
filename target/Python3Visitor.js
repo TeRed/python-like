@@ -84,6 +84,12 @@ Python3Visitor.prototype.visitWhile_stmt = function(ctx) {
 };
 
 
+// Visit a parse tree produced by Python3Parser#for_stmt.
+Python3Visitor.prototype.visitFor_stmt = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by Python3Parser#suite.
 Python3Visitor.prototype.visitSuite = function(ctx) {
   return this.visitChildren(ctx);

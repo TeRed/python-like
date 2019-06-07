@@ -9,7 +9,11 @@ class Visitor extends Python3Visitor {
       .join('');
   }
 
-  // visitFile_input(ctx) {}
+  visitFile_input(ctx) {
+    const rangeFun = 'function range(start, stop, step) { if (typeof stop == \'undefined\') {stop = start;start = 0;}if (typeof step == \'undefined\') {step = 1;}if ((step > 0 && start >= stop) || (step < 0 && start <= stop)) {  return []; }var result = [];for (var i = start; step > 0 ? i < stop : i > stop; i += step) {   result.push(i); } return result;}';
+
+    return rangeFun + this.visitChildren(ctx);
+  }
 
   visitFuncdef(ctx) {
     const [def, name, params, colon, suite] = ctx.children;
@@ -34,9 +38,10 @@ class Visitor extends Python3Visitor {
   visitExpr_stmt(ctx) {
     const [variable, sign, ...rest] = ctx.children;
 
+
     const expr = this.visitChildren(ctx);
 
-    if(sign && sign.getText() === '=') {
+    if (sign && sign.getText() === '=' && !variable.getText().endsWith(']')) {
       return 'var ' + expr;
     }
 
@@ -82,6 +87,14 @@ class Visitor extends Python3Visitor {
     return [whileStmt, testVisited, '{', this.visit(suite), '}'].join('');
   }
 
+  visitFor_stmt(ctx) {
+    const [forStmt, variable, inStmt, arr, colon, suite] = ctx.children;
+
+    const forSuite = ['(', 'const ', this.visit(variable), ' of ', this.visit(arr), ')'];
+
+    return [forStmt, ...forSuite, '{', this.visit(suite), '}'].join('');
+  }
+
   // visitSuite(ctx) {}
 
   // visitTest(ctx) {}
@@ -109,7 +122,12 @@ class Visitor extends Python3Visitor {
 
   // visitFactor(ctx) {}
 
-  // visitPower(ctx) {}
+  visitPower(ctx) {
+    const [atom] = ctx.children;
+    if (atom === 'range') this.range = true;
+
+    return this.visitChildren(ctx);
+  }
 
   // visitAtom(ctx) {}
 
