@@ -15,7 +15,7 @@ if(!inputFile) {
     return 1;
 }
 
-const input = fs.readFileSync(inputFile).toString();
+const input = fs.readFileSync(inputFile).toString() + '\n';
 
 if (optionsString) {
     var [, ...options] = optionsString.split('');

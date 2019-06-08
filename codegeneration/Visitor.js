@@ -157,6 +157,7 @@ class Visitor extends PythonLikeVisitor {
     map.set('or', '||');
     map.set('True', 'true');
     map.set('False', 'false');
+    map.set('append', 'push');
 
     const terminal = ctx.getText();
     if (map.has(terminal)) return map.get(terminal);
