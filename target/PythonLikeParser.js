@@ -1,9 +1,9 @@
-// Generated from grammars/Python3.g4 by ANTLR 4.7.1
+// Generated from grammars/PythonLike.g4 by ANTLR 4.7.1
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
-var Python3Visitor = require('./Python3Visitor').Python3Visitor;
+var PythonLikeVisitor = require('./PythonLikeVisitor').PythonLikeVisitor;
 
-var grammarFileName = "Python3.g4";
+var grammarFileName = "PythonLike.g4";
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u00037\u0145\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
@@ -258,7 +258,7 @@ var ruleNames =  [ "file_input", "funcdef", "parameters", "argslist", "stmt",
                    "comp_op", "expr", "term", "factor", "power", "atom", 
                    "testlist", "trailer", "dictorsetmaker", "number" ];
 
-function Python3Parser (input) {
+function PythonLikeParser (input) {
 	antlr4.Parser.call(this, input);
     this._interp = new antlr4.atn.ParserATNSimulator(this, atn, decisionsToDFA, sharedContextCache);
     this.ruleNames = ruleNames;
@@ -267,99 +267,99 @@ function Python3Parser (input) {
     return this;
 }
 
-Python3Parser.prototype = Object.create(antlr4.Parser.prototype);
-Python3Parser.prototype.constructor = Python3Parser;
+PythonLikeParser.prototype = Object.create(antlr4.Parser.prototype);
+PythonLikeParser.prototype.constructor = PythonLikeParser;
 
-Object.defineProperty(Python3Parser.prototype, "atn", {
+Object.defineProperty(PythonLikeParser.prototype, "atn", {
 	get : function() {
 		return atn;
 	}
 });
 
-Python3Parser.EOF = antlr4.Token.EOF;
-Python3Parser.T__0 = 1;
-Python3Parser.T__1 = 2;
-Python3Parser.T__2 = 3;
-Python3Parser.T__3 = 4;
-Python3Parser.T__4 = 5;
-Python3Parser.T__5 = 6;
-Python3Parser.DEF = 7;
-Python3Parser.RETURN = 8;
-Python3Parser.IF = 9;
-Python3Parser.ELIF = 10;
-Python3Parser.ELSE = 11;
-Python3Parser.WHILE = 12;
-Python3Parser.OR = 13;
-Python3Parser.AND = 14;
-Python3Parser.NOT = 15;
-Python3Parser.NONE = 16;
-Python3Parser.TRUE = 17;
-Python3Parser.FALSE = 18;
-Python3Parser.PASS = 19;
-Python3Parser.CONTINUE = 20;
-Python3Parser.BREAK = 21;
-Python3Parser.NEWLINE = 22;
-Python3Parser.NAME = 23;
-Python3Parser.STRING_LITERAL = 24;
-Python3Parser.DECIMAL_INTEGER = 25;
-Python3Parser.FLOAT_NUMBER = 26;
-Python3Parser.DOT = 27;
-Python3Parser.STAR = 28;
-Python3Parser.OPEN_PAREN = 29;
-Python3Parser.CLOSE_PAREN = 30;
-Python3Parser.COMMA = 31;
-Python3Parser.COLON = 32;
-Python3Parser.SEMI_COLON = 33;
-Python3Parser.ASSIGN = 34;
-Python3Parser.ADD = 35;
-Python3Parser.MINUS = 36;
-Python3Parser.DIV = 37;
-Python3Parser.MOD = 38;
-Python3Parser.LESS_THAN = 39;
-Python3Parser.GREATER_THAN = 40;
-Python3Parser.EQUALS = 41;
-Python3Parser.GT_EQ = 42;
-Python3Parser.LT_EQ = 43;
-Python3Parser.NOT_EQ = 44;
-Python3Parser.ADD_ASSIGN = 45;
-Python3Parser.SUB_ASSIGN = 46;
-Python3Parser.MULT_ASSIGN = 47;
-Python3Parser.DIV_ASSIGN = 48;
-Python3Parser.MOD_ASSIGN = 49;
-Python3Parser.SKIP_ = 50;
-Python3Parser.UNKNOWN_CHAR = 51;
-Python3Parser.INDENT = 52;
-Python3Parser.DEDENT = 53;
+PythonLikeParser.EOF = antlr4.Token.EOF;
+PythonLikeParser.T__0 = 1;
+PythonLikeParser.T__1 = 2;
+PythonLikeParser.T__2 = 3;
+PythonLikeParser.T__3 = 4;
+PythonLikeParser.T__4 = 5;
+PythonLikeParser.T__5 = 6;
+PythonLikeParser.DEF = 7;
+PythonLikeParser.RETURN = 8;
+PythonLikeParser.IF = 9;
+PythonLikeParser.ELIF = 10;
+PythonLikeParser.ELSE = 11;
+PythonLikeParser.WHILE = 12;
+PythonLikeParser.OR = 13;
+PythonLikeParser.AND = 14;
+PythonLikeParser.NOT = 15;
+PythonLikeParser.NONE = 16;
+PythonLikeParser.TRUE = 17;
+PythonLikeParser.FALSE = 18;
+PythonLikeParser.PASS = 19;
+PythonLikeParser.CONTINUE = 20;
+PythonLikeParser.BREAK = 21;
+PythonLikeParser.NEWLINE = 22;
+PythonLikeParser.NAME = 23;
+PythonLikeParser.STRING_LITERAL = 24;
+PythonLikeParser.DECIMAL_INTEGER = 25;
+PythonLikeParser.FLOAT_NUMBER = 26;
+PythonLikeParser.DOT = 27;
+PythonLikeParser.STAR = 28;
+PythonLikeParser.OPEN_PAREN = 29;
+PythonLikeParser.CLOSE_PAREN = 30;
+PythonLikeParser.COMMA = 31;
+PythonLikeParser.COLON = 32;
+PythonLikeParser.SEMI_COLON = 33;
+PythonLikeParser.ASSIGN = 34;
+PythonLikeParser.ADD = 35;
+PythonLikeParser.MINUS = 36;
+PythonLikeParser.DIV = 37;
+PythonLikeParser.MOD = 38;
+PythonLikeParser.LESS_THAN = 39;
+PythonLikeParser.GREATER_THAN = 40;
+PythonLikeParser.EQUALS = 41;
+PythonLikeParser.GT_EQ = 42;
+PythonLikeParser.LT_EQ = 43;
+PythonLikeParser.NOT_EQ = 44;
+PythonLikeParser.ADD_ASSIGN = 45;
+PythonLikeParser.SUB_ASSIGN = 46;
+PythonLikeParser.MULT_ASSIGN = 47;
+PythonLikeParser.DIV_ASSIGN = 48;
+PythonLikeParser.MOD_ASSIGN = 49;
+PythonLikeParser.SKIP_ = 50;
+PythonLikeParser.UNKNOWN_CHAR = 51;
+PythonLikeParser.INDENT = 52;
+PythonLikeParser.DEDENT = 53;
 
-Python3Parser.RULE_file_input = 0;
-Python3Parser.RULE_funcdef = 1;
-Python3Parser.RULE_parameters = 2;
-Python3Parser.RULE_argslist = 3;
-Python3Parser.RULE_stmt = 4;
-Python3Parser.RULE_simple_stmt = 5;
-Python3Parser.RULE_small_stmt = 6;
-Python3Parser.RULE_expr_stmt = 7;
-Python3Parser.RULE_augassign = 8;
-Python3Parser.RULE_compound_stmt = 9;
-Python3Parser.RULE_if_stmt = 10;
-Python3Parser.RULE_while_stmt = 11;
-Python3Parser.RULE_for_stmt = 12;
-Python3Parser.RULE_suite = 13;
-Python3Parser.RULE_test = 14;
-Python3Parser.RULE_or_test = 15;
-Python3Parser.RULE_and_test = 16;
-Python3Parser.RULE_not_test = 17;
-Python3Parser.RULE_comparison = 18;
-Python3Parser.RULE_comp_op = 19;
-Python3Parser.RULE_expr = 20;
-Python3Parser.RULE_term = 21;
-Python3Parser.RULE_factor = 22;
-Python3Parser.RULE_power = 23;
-Python3Parser.RULE_atom = 24;
-Python3Parser.RULE_testlist = 25;
-Python3Parser.RULE_trailer = 26;
-Python3Parser.RULE_dictorsetmaker = 27;
-Python3Parser.RULE_number = 28;
+PythonLikeParser.RULE_file_input = 0;
+PythonLikeParser.RULE_funcdef = 1;
+PythonLikeParser.RULE_parameters = 2;
+PythonLikeParser.RULE_argslist = 3;
+PythonLikeParser.RULE_stmt = 4;
+PythonLikeParser.RULE_simple_stmt = 5;
+PythonLikeParser.RULE_small_stmt = 6;
+PythonLikeParser.RULE_expr_stmt = 7;
+PythonLikeParser.RULE_augassign = 8;
+PythonLikeParser.RULE_compound_stmt = 9;
+PythonLikeParser.RULE_if_stmt = 10;
+PythonLikeParser.RULE_while_stmt = 11;
+PythonLikeParser.RULE_for_stmt = 12;
+PythonLikeParser.RULE_suite = 13;
+PythonLikeParser.RULE_test = 14;
+PythonLikeParser.RULE_or_test = 15;
+PythonLikeParser.RULE_and_test = 16;
+PythonLikeParser.RULE_not_test = 17;
+PythonLikeParser.RULE_comparison = 18;
+PythonLikeParser.RULE_comp_op = 19;
+PythonLikeParser.RULE_expr = 20;
+PythonLikeParser.RULE_term = 21;
+PythonLikeParser.RULE_factor = 22;
+PythonLikeParser.RULE_power = 23;
+PythonLikeParser.RULE_atom = 24;
+PythonLikeParser.RULE_testlist = 25;
+PythonLikeParser.RULE_trailer = 26;
+PythonLikeParser.RULE_dictorsetmaker = 27;
+PythonLikeParser.RULE_number = 28;
 
 function File_inputContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -370,7 +370,7 @@ function File_inputContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_file_input;
+    this.ruleIndex = PythonLikeParser.RULE_file_input;
     return this;
 }
 
@@ -378,7 +378,7 @@ File_inputContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 File_inputContext.prototype.constructor = File_inputContext;
 
 File_inputContext.prototype.EOF = function() {
-    return this.getToken(Python3Parser.EOF, 0);
+    return this.getToken(PythonLikeParser.EOF, 0);
 };
 
 File_inputContext.prototype.NEWLINE = function(i) {
@@ -386,9 +386,9 @@ File_inputContext.prototype.NEWLINE = function(i) {
 		i = null;
 	}
     if(i===null) {
-        return this.getTokens(Python3Parser.NEWLINE);
+        return this.getTokens(PythonLikeParser.NEWLINE);
     } else {
-        return this.getToken(Python3Parser.NEWLINE, i);
+        return this.getToken(PythonLikeParser.NEWLINE, i);
     }
 };
 
@@ -405,7 +405,7 @@ File_inputContext.prototype.stmt = function(i) {
 };
 
 File_inputContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitFile_input(this);
     } else {
         return visitor.visitChildren(this);
@@ -415,47 +415,47 @@ File_inputContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.File_inputContext = File_inputContext;
+PythonLikeParser.File_inputContext = File_inputContext;
 
-Python3Parser.prototype.file_input = function() {
+PythonLikeParser.prototype.file_input = function() {
 
     var localctx = new File_inputContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 0, Python3Parser.RULE_file_input);
+    this.enterRule(localctx, 0, PythonLikeParser.RULE_file_input);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 62;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << Python3Parser.T__0) | (1 << Python3Parser.T__2) | (1 << Python3Parser.T__4) | (1 << Python3Parser.DEF) | (1 << Python3Parser.RETURN) | (1 << Python3Parser.IF) | (1 << Python3Parser.WHILE) | (1 << Python3Parser.NOT) | (1 << Python3Parser.NONE) | (1 << Python3Parser.TRUE) | (1 << Python3Parser.FALSE) | (1 << Python3Parser.PASS) | (1 << Python3Parser.CONTINUE) | (1 << Python3Parser.BREAK) | (1 << Python3Parser.NEWLINE) | (1 << Python3Parser.NAME) | (1 << Python3Parser.STRING_LITERAL) | (1 << Python3Parser.DECIMAL_INTEGER) | (1 << Python3Parser.FLOAT_NUMBER) | (1 << Python3Parser.OPEN_PAREN))) !== 0) || _la===Python3Parser.ADD || _la===Python3Parser.MINUS) {
+        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << PythonLikeParser.T__0) | (1 << PythonLikeParser.T__2) | (1 << PythonLikeParser.T__4) | (1 << PythonLikeParser.DEF) | (1 << PythonLikeParser.RETURN) | (1 << PythonLikeParser.IF) | (1 << PythonLikeParser.WHILE) | (1 << PythonLikeParser.NOT) | (1 << PythonLikeParser.NONE) | (1 << PythonLikeParser.TRUE) | (1 << PythonLikeParser.FALSE) | (1 << PythonLikeParser.PASS) | (1 << PythonLikeParser.CONTINUE) | (1 << PythonLikeParser.BREAK) | (1 << PythonLikeParser.NEWLINE) | (1 << PythonLikeParser.NAME) | (1 << PythonLikeParser.STRING_LITERAL) | (1 << PythonLikeParser.DECIMAL_INTEGER) | (1 << PythonLikeParser.FLOAT_NUMBER) | (1 << PythonLikeParser.OPEN_PAREN))) !== 0) || _la===PythonLikeParser.ADD || _la===PythonLikeParser.MINUS) {
             this.state = 60;
             this._errHandler.sync(this);
             switch(this._input.LA(1)) {
-            case Python3Parser.NEWLINE:
+            case PythonLikeParser.NEWLINE:
                 this.state = 58;
-                this.match(Python3Parser.NEWLINE);
+                this.match(PythonLikeParser.NEWLINE);
                 break;
-            case Python3Parser.T__0:
-            case Python3Parser.T__2:
-            case Python3Parser.T__4:
-            case Python3Parser.DEF:
-            case Python3Parser.RETURN:
-            case Python3Parser.IF:
-            case Python3Parser.WHILE:
-            case Python3Parser.NOT:
-            case Python3Parser.NONE:
-            case Python3Parser.TRUE:
-            case Python3Parser.FALSE:
-            case Python3Parser.PASS:
-            case Python3Parser.CONTINUE:
-            case Python3Parser.BREAK:
-            case Python3Parser.NAME:
-            case Python3Parser.STRING_LITERAL:
-            case Python3Parser.DECIMAL_INTEGER:
-            case Python3Parser.FLOAT_NUMBER:
-            case Python3Parser.OPEN_PAREN:
-            case Python3Parser.ADD:
-            case Python3Parser.MINUS:
+            case PythonLikeParser.T__0:
+            case PythonLikeParser.T__2:
+            case PythonLikeParser.T__4:
+            case PythonLikeParser.DEF:
+            case PythonLikeParser.RETURN:
+            case PythonLikeParser.IF:
+            case PythonLikeParser.WHILE:
+            case PythonLikeParser.NOT:
+            case PythonLikeParser.NONE:
+            case PythonLikeParser.TRUE:
+            case PythonLikeParser.FALSE:
+            case PythonLikeParser.PASS:
+            case PythonLikeParser.CONTINUE:
+            case PythonLikeParser.BREAK:
+            case PythonLikeParser.NAME:
+            case PythonLikeParser.STRING_LITERAL:
+            case PythonLikeParser.DECIMAL_INTEGER:
+            case PythonLikeParser.FLOAT_NUMBER:
+            case PythonLikeParser.OPEN_PAREN:
+            case PythonLikeParser.ADD:
+            case PythonLikeParser.MINUS:
                 this.state = 59;
                 this.stmt();
                 break;
@@ -467,7 +467,7 @@ Python3Parser.prototype.file_input = function() {
             _la = this._input.LA(1);
         }
         this.state = 65;
-        this.match(Python3Parser.EOF);
+        this.match(PythonLikeParser.EOF);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
 	        localctx.exception = re;
@@ -491,7 +491,7 @@ function FuncdefContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_funcdef;
+    this.ruleIndex = PythonLikeParser.RULE_funcdef;
     return this;
 }
 
@@ -499,11 +499,11 @@ FuncdefContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 FuncdefContext.prototype.constructor = FuncdefContext;
 
 FuncdefContext.prototype.DEF = function() {
-    return this.getToken(Python3Parser.DEF, 0);
+    return this.getToken(PythonLikeParser.DEF, 0);
 };
 
 FuncdefContext.prototype.NAME = function() {
-    return this.getToken(Python3Parser.NAME, 0);
+    return this.getToken(PythonLikeParser.NAME, 0);
 };
 
 FuncdefContext.prototype.parameters = function() {
@@ -515,7 +515,7 @@ FuncdefContext.prototype.suite = function() {
 };
 
 FuncdefContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitFuncdef(this);
     } else {
         return visitor.visitChildren(this);
@@ -525,22 +525,22 @@ FuncdefContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.FuncdefContext = FuncdefContext;
+PythonLikeParser.FuncdefContext = FuncdefContext;
 
-Python3Parser.prototype.funcdef = function() {
+PythonLikeParser.prototype.funcdef = function() {
 
     var localctx = new FuncdefContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 2, Python3Parser.RULE_funcdef);
+    this.enterRule(localctx, 2, PythonLikeParser.RULE_funcdef);
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 67;
-        this.match(Python3Parser.DEF);
+        this.match(PythonLikeParser.DEF);
         this.state = 68;
-        this.match(Python3Parser.NAME);
+        this.match(PythonLikeParser.NAME);
         this.state = 69;
         this.parameters();
         this.state = 70;
-        this.match(Python3Parser.COLON);
+        this.match(PythonLikeParser.COLON);
         this.state = 71;
         this.suite();
     } catch (re) {
@@ -566,7 +566,7 @@ function ParametersContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_parameters;
+    this.ruleIndex = PythonLikeParser.RULE_parameters;
     return this;
 }
 
@@ -578,7 +578,7 @@ ParametersContext.prototype.argslist = function() {
 };
 
 ParametersContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitParameters(this);
     } else {
         return visitor.visitChildren(this);
@@ -588,27 +588,27 @@ ParametersContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.ParametersContext = ParametersContext;
+PythonLikeParser.ParametersContext = ParametersContext;
 
-Python3Parser.prototype.parameters = function() {
+PythonLikeParser.prototype.parameters = function() {
 
     var localctx = new ParametersContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 4, Python3Parser.RULE_parameters);
+    this.enterRule(localctx, 4, PythonLikeParser.RULE_parameters);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 73;
-        this.match(Python3Parser.OPEN_PAREN);
+        this.match(PythonLikeParser.OPEN_PAREN);
         this.state = 75;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        if(_la===Python3Parser.NAME) {
+        if(_la===PythonLikeParser.NAME) {
             this.state = 74;
             this.argslist();
         }
 
         this.state = 77;
-        this.match(Python3Parser.CLOSE_PAREN);
+        this.match(PythonLikeParser.CLOSE_PAREN);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
 	        localctx.exception = re;
@@ -632,7 +632,7 @@ function ArgslistContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_argslist;
+    this.ruleIndex = PythonLikeParser.RULE_argslist;
     return this;
 }
 
@@ -644,9 +644,9 @@ ArgslistContext.prototype.NAME = function(i) {
 		i = null;
 	}
     if(i===null) {
-        return this.getTokens(Python3Parser.NAME);
+        return this.getTokens(PythonLikeParser.NAME);
     } else {
-        return this.getToken(Python3Parser.NAME, i);
+        return this.getToken(PythonLikeParser.NAME, i);
     }
 };
 
@@ -663,7 +663,7 @@ ArgslistContext.prototype.test = function(i) {
 };
 
 ArgslistContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitArgslist(this);
     } else {
         return visitor.visitChildren(this);
@@ -673,23 +673,23 @@ ArgslistContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.ArgslistContext = ArgslistContext;
+PythonLikeParser.ArgslistContext = ArgslistContext;
 
-Python3Parser.prototype.argslist = function() {
+PythonLikeParser.prototype.argslist = function() {
 
     var localctx = new ArgslistContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 6, Python3Parser.RULE_argslist);
+    this.enterRule(localctx, 6, PythonLikeParser.RULE_argslist);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 79;
-        this.match(Python3Parser.NAME);
+        this.match(PythonLikeParser.NAME);
         this.state = 82;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        if(_la===Python3Parser.ASSIGN) {
+        if(_la===PythonLikeParser.ASSIGN) {
             this.state = 80;
-            this.match(Python3Parser.ASSIGN);
+            this.match(PythonLikeParser.ASSIGN);
             this.state = 81;
             this.test();
         }
@@ -697,17 +697,17 @@ Python3Parser.prototype.argslist = function() {
         this.state = 92;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while(_la===Python3Parser.COMMA) {
+        while(_la===PythonLikeParser.COMMA) {
             this.state = 84;
-            this.match(Python3Parser.COMMA);
+            this.match(PythonLikeParser.COMMA);
             this.state = 85;
-            this.match(Python3Parser.NAME);
+            this.match(PythonLikeParser.NAME);
             this.state = 88;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if(_la===Python3Parser.ASSIGN) {
+            if(_la===PythonLikeParser.ASSIGN) {
                 this.state = 86;
-                this.match(Python3Parser.ASSIGN);
+                this.match(PythonLikeParser.ASSIGN);
                 this.state = 87;
                 this.test();
             }
@@ -739,7 +739,7 @@ function StmtContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_stmt;
+    this.ruleIndex = PythonLikeParser.RULE_stmt;
     return this;
 }
 
@@ -755,7 +755,7 @@ StmtContext.prototype.compound_stmt = function() {
 };
 
 StmtContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitStmt(this);
     } else {
         return visitor.visitChildren(this);
@@ -765,41 +765,41 @@ StmtContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.StmtContext = StmtContext;
+PythonLikeParser.StmtContext = StmtContext;
 
-Python3Parser.prototype.stmt = function() {
+PythonLikeParser.prototype.stmt = function() {
 
     var localctx = new StmtContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 8, Python3Parser.RULE_stmt);
+    this.enterRule(localctx, 8, PythonLikeParser.RULE_stmt);
     try {
         this.state = 97;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
-        case Python3Parser.T__2:
-        case Python3Parser.T__4:
-        case Python3Parser.RETURN:
-        case Python3Parser.NOT:
-        case Python3Parser.NONE:
-        case Python3Parser.TRUE:
-        case Python3Parser.FALSE:
-        case Python3Parser.PASS:
-        case Python3Parser.CONTINUE:
-        case Python3Parser.BREAK:
-        case Python3Parser.NAME:
-        case Python3Parser.STRING_LITERAL:
-        case Python3Parser.DECIMAL_INTEGER:
-        case Python3Parser.FLOAT_NUMBER:
-        case Python3Parser.OPEN_PAREN:
-        case Python3Parser.ADD:
-        case Python3Parser.MINUS:
+        case PythonLikeParser.T__2:
+        case PythonLikeParser.T__4:
+        case PythonLikeParser.RETURN:
+        case PythonLikeParser.NOT:
+        case PythonLikeParser.NONE:
+        case PythonLikeParser.TRUE:
+        case PythonLikeParser.FALSE:
+        case PythonLikeParser.PASS:
+        case PythonLikeParser.CONTINUE:
+        case PythonLikeParser.BREAK:
+        case PythonLikeParser.NAME:
+        case PythonLikeParser.STRING_LITERAL:
+        case PythonLikeParser.DECIMAL_INTEGER:
+        case PythonLikeParser.FLOAT_NUMBER:
+        case PythonLikeParser.OPEN_PAREN:
+        case PythonLikeParser.ADD:
+        case PythonLikeParser.MINUS:
             this.enterOuterAlt(localctx, 1);
             this.state = 95;
             this.simple_stmt();
             break;
-        case Python3Parser.T__0:
-        case Python3Parser.DEF:
-        case Python3Parser.IF:
-        case Python3Parser.WHILE:
+        case PythonLikeParser.T__0:
+        case PythonLikeParser.DEF:
+        case PythonLikeParser.IF:
+        case PythonLikeParser.WHILE:
             this.enterOuterAlt(localctx, 2);
             this.state = 96;
             this.compound_stmt();
@@ -830,7 +830,7 @@ function Simple_stmtContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_simple_stmt;
+    this.ruleIndex = PythonLikeParser.RULE_simple_stmt;
     return this;
 }
 
@@ -849,11 +849,11 @@ Simple_stmtContext.prototype.small_stmt = function(i) {
 };
 
 Simple_stmtContext.prototype.NEWLINE = function() {
-    return this.getToken(Python3Parser.NEWLINE, 0);
+    return this.getToken(PythonLikeParser.NEWLINE, 0);
 };
 
 Simple_stmtContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitSimple_stmt(this);
     } else {
         return visitor.visitChildren(this);
@@ -863,12 +863,12 @@ Simple_stmtContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.Simple_stmtContext = Simple_stmtContext;
+PythonLikeParser.Simple_stmtContext = Simple_stmtContext;
 
-Python3Parser.prototype.simple_stmt = function() {
+PythonLikeParser.prototype.simple_stmt = function() {
 
     var localctx = new Simple_stmtContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 10, Python3Parser.RULE_simple_stmt);
+    this.enterRule(localctx, 10, PythonLikeParser.RULE_simple_stmt);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
@@ -880,7 +880,7 @@ Python3Parser.prototype.simple_stmt = function() {
         while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
             if(_alt===1) {
                 this.state = 100;
-                this.match(Python3Parser.SEMI_COLON);
+                this.match(PythonLikeParser.SEMI_COLON);
                 this.state = 101;
                 this.small_stmt(); 
             }
@@ -892,13 +892,13 @@ Python3Parser.prototype.simple_stmt = function() {
         this.state = 108;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        if(_la===Python3Parser.SEMI_COLON) {
+        if(_la===PythonLikeParser.SEMI_COLON) {
             this.state = 107;
-            this.match(Python3Parser.SEMI_COLON);
+            this.match(PythonLikeParser.SEMI_COLON);
         }
 
         this.state = 110;
-        this.match(Python3Parser.NEWLINE);
+        this.match(PythonLikeParser.NEWLINE);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
 	        localctx.exception = re;
@@ -922,7 +922,7 @@ function Small_stmtContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_small_stmt;
+    this.ruleIndex = PythonLikeParser.RULE_small_stmt;
     return this;
 }
 
@@ -934,19 +934,19 @@ Small_stmtContext.prototype.expr_stmt = function() {
 };
 
 Small_stmtContext.prototype.PASS = function() {
-    return this.getToken(Python3Parser.PASS, 0);
+    return this.getToken(PythonLikeParser.PASS, 0);
 };
 
 Small_stmtContext.prototype.BREAK = function() {
-    return this.getToken(Python3Parser.BREAK, 0);
+    return this.getToken(PythonLikeParser.BREAK, 0);
 };
 
 Small_stmtContext.prototype.CONTINUE = function() {
-    return this.getToken(Python3Parser.CONTINUE, 0);
+    return this.getToken(PythonLikeParser.CONTINUE, 0);
 };
 
 Small_stmtContext.prototype.RETURN = function() {
-    return this.getToken(Python3Parser.RETURN, 0);
+    return this.getToken(PythonLikeParser.RETURN, 0);
 };
 
 Small_stmtContext.prototype.test = function() {
@@ -954,7 +954,7 @@ Small_stmtContext.prototype.test = function() {
 };
 
 Small_stmtContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitSmall_stmt(this);
     } else {
         return visitor.visitChildren(this);
@@ -964,57 +964,57 @@ Small_stmtContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.Small_stmtContext = Small_stmtContext;
+PythonLikeParser.Small_stmtContext = Small_stmtContext;
 
-Python3Parser.prototype.small_stmt = function() {
+PythonLikeParser.prototype.small_stmt = function() {
 
     var localctx = new Small_stmtContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 12, Python3Parser.RULE_small_stmt);
+    this.enterRule(localctx, 12, PythonLikeParser.RULE_small_stmt);
     var _la = 0; // Token type
     try {
         this.state = 120;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
-        case Python3Parser.T__2:
-        case Python3Parser.T__4:
-        case Python3Parser.NOT:
-        case Python3Parser.NONE:
-        case Python3Parser.TRUE:
-        case Python3Parser.FALSE:
-        case Python3Parser.NAME:
-        case Python3Parser.STRING_LITERAL:
-        case Python3Parser.DECIMAL_INTEGER:
-        case Python3Parser.FLOAT_NUMBER:
-        case Python3Parser.OPEN_PAREN:
-        case Python3Parser.ADD:
-        case Python3Parser.MINUS:
+        case PythonLikeParser.T__2:
+        case PythonLikeParser.T__4:
+        case PythonLikeParser.NOT:
+        case PythonLikeParser.NONE:
+        case PythonLikeParser.TRUE:
+        case PythonLikeParser.FALSE:
+        case PythonLikeParser.NAME:
+        case PythonLikeParser.STRING_LITERAL:
+        case PythonLikeParser.DECIMAL_INTEGER:
+        case PythonLikeParser.FLOAT_NUMBER:
+        case PythonLikeParser.OPEN_PAREN:
+        case PythonLikeParser.ADD:
+        case PythonLikeParser.MINUS:
             this.enterOuterAlt(localctx, 1);
             this.state = 112;
             this.expr_stmt();
             break;
-        case Python3Parser.PASS:
+        case PythonLikeParser.PASS:
             this.enterOuterAlt(localctx, 2);
             this.state = 113;
-            this.match(Python3Parser.PASS);
+            this.match(PythonLikeParser.PASS);
             break;
-        case Python3Parser.BREAK:
+        case PythonLikeParser.BREAK:
             this.enterOuterAlt(localctx, 3);
             this.state = 114;
-            this.match(Python3Parser.BREAK);
+            this.match(PythonLikeParser.BREAK);
             break;
-        case Python3Parser.CONTINUE:
+        case PythonLikeParser.CONTINUE:
             this.enterOuterAlt(localctx, 4);
             this.state = 115;
-            this.match(Python3Parser.CONTINUE);
+            this.match(PythonLikeParser.CONTINUE);
             break;
-        case Python3Parser.RETURN:
+        case PythonLikeParser.RETURN:
             this.enterOuterAlt(localctx, 5);
             this.state = 116;
-            this.match(Python3Parser.RETURN);
+            this.match(PythonLikeParser.RETURN);
             this.state = 118;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << Python3Parser.T__2) | (1 << Python3Parser.T__4) | (1 << Python3Parser.NOT) | (1 << Python3Parser.NONE) | (1 << Python3Parser.TRUE) | (1 << Python3Parser.FALSE) | (1 << Python3Parser.NAME) | (1 << Python3Parser.STRING_LITERAL) | (1 << Python3Parser.DECIMAL_INTEGER) | (1 << Python3Parser.FLOAT_NUMBER) | (1 << Python3Parser.OPEN_PAREN))) !== 0) || _la===Python3Parser.ADD || _la===Python3Parser.MINUS) {
+            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << PythonLikeParser.T__2) | (1 << PythonLikeParser.T__4) | (1 << PythonLikeParser.NOT) | (1 << PythonLikeParser.NONE) | (1 << PythonLikeParser.TRUE) | (1 << PythonLikeParser.FALSE) | (1 << PythonLikeParser.NAME) | (1 << PythonLikeParser.STRING_LITERAL) | (1 << PythonLikeParser.DECIMAL_INTEGER) | (1 << PythonLikeParser.FLOAT_NUMBER) | (1 << PythonLikeParser.OPEN_PAREN))) !== 0) || _la===PythonLikeParser.ADD || _la===PythonLikeParser.MINUS) {
                 this.state = 117;
                 this.test();
             }
@@ -1046,7 +1046,7 @@ function Expr_stmtContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_expr_stmt;
+    this.ruleIndex = PythonLikeParser.RULE_expr_stmt;
     return this;
 }
 
@@ -1069,7 +1069,7 @@ Expr_stmtContext.prototype.augassign = function() {
 };
 
 Expr_stmtContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitExpr_stmt(this);
     } else {
         return visitor.visitChildren(this);
@@ -1079,12 +1079,12 @@ Expr_stmtContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.Expr_stmtContext = Expr_stmtContext;
+PythonLikeParser.Expr_stmtContext = Expr_stmtContext;
 
-Python3Parser.prototype.expr_stmt = function() {
+PythonLikeParser.prototype.expr_stmt = function() {
 
     var localctx = new Expr_stmtContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 14, Python3Parser.RULE_expr_stmt);
+    this.enterRule(localctx, 14, PythonLikeParser.RULE_expr_stmt);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
@@ -1093,25 +1093,25 @@ Python3Parser.prototype.expr_stmt = function() {
         this.state = 133;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
-        case Python3Parser.ADD_ASSIGN:
-        case Python3Parser.SUB_ASSIGN:
-        case Python3Parser.MULT_ASSIGN:
-        case Python3Parser.DIV_ASSIGN:
-        case Python3Parser.MOD_ASSIGN:
+        case PythonLikeParser.ADD_ASSIGN:
+        case PythonLikeParser.SUB_ASSIGN:
+        case PythonLikeParser.MULT_ASSIGN:
+        case PythonLikeParser.DIV_ASSIGN:
+        case PythonLikeParser.MOD_ASSIGN:
             this.state = 123;
             this.augassign();
             this.state = 124;
             this.test();
             break;
-        case Python3Parser.NEWLINE:
-        case Python3Parser.SEMI_COLON:
-        case Python3Parser.ASSIGN:
+        case PythonLikeParser.NEWLINE:
+        case PythonLikeParser.SEMI_COLON:
+        case PythonLikeParser.ASSIGN:
             this.state = 130;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            while(_la===Python3Parser.ASSIGN) {
+            while(_la===PythonLikeParser.ASSIGN) {
                 this.state = 126;
-                this.match(Python3Parser.ASSIGN);
+                this.match(PythonLikeParser.ASSIGN);
                 this.state = 127;
                 this.test();
                 this.state = 132;
@@ -1145,7 +1145,7 @@ function AugassignContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_augassign;
+    this.ruleIndex = PythonLikeParser.RULE_augassign;
     return this;
 }
 
@@ -1154,7 +1154,7 @@ AugassignContext.prototype.constructor = AugassignContext;
 
 
 AugassignContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitAugassign(this);
     } else {
         return visitor.visitChildren(this);
@@ -1164,18 +1164,18 @@ AugassignContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.AugassignContext = AugassignContext;
+PythonLikeParser.AugassignContext = AugassignContext;
 
-Python3Parser.prototype.augassign = function() {
+PythonLikeParser.prototype.augassign = function() {
 
     var localctx = new AugassignContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 16, Python3Parser.RULE_augassign);
+    this.enterRule(localctx, 16, PythonLikeParser.RULE_augassign);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 135;
         _la = this._input.LA(1);
-        if(!(((((_la - 45)) & ~0x1f) == 0 && ((1 << (_la - 45)) & ((1 << (Python3Parser.ADD_ASSIGN - 45)) | (1 << (Python3Parser.SUB_ASSIGN - 45)) | (1 << (Python3Parser.MULT_ASSIGN - 45)) | (1 << (Python3Parser.DIV_ASSIGN - 45)) | (1 << (Python3Parser.MOD_ASSIGN - 45)))) !== 0))) {
+        if(!(((((_la - 45)) & ~0x1f) == 0 && ((1 << (_la - 45)) & ((1 << (PythonLikeParser.ADD_ASSIGN - 45)) | (1 << (PythonLikeParser.SUB_ASSIGN - 45)) | (1 << (PythonLikeParser.MULT_ASSIGN - 45)) | (1 << (PythonLikeParser.DIV_ASSIGN - 45)) | (1 << (PythonLikeParser.MOD_ASSIGN - 45)))) !== 0))) {
         this._errHandler.recoverInline(this);
         }
         else {
@@ -1205,7 +1205,7 @@ function Compound_stmtContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_compound_stmt;
+    this.ruleIndex = PythonLikeParser.RULE_compound_stmt;
     return this;
 }
 
@@ -1229,7 +1229,7 @@ Compound_stmtContext.prototype.funcdef = function() {
 };
 
 Compound_stmtContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitCompound_stmt(this);
     } else {
         return visitor.visitChildren(this);
@@ -1239,32 +1239,32 @@ Compound_stmtContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.Compound_stmtContext = Compound_stmtContext;
+PythonLikeParser.Compound_stmtContext = Compound_stmtContext;
 
-Python3Parser.prototype.compound_stmt = function() {
+PythonLikeParser.prototype.compound_stmt = function() {
 
     var localctx = new Compound_stmtContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 18, Python3Parser.RULE_compound_stmt);
+    this.enterRule(localctx, 18, PythonLikeParser.RULE_compound_stmt);
     try {
         this.state = 141;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
-        case Python3Parser.IF:
+        case PythonLikeParser.IF:
             this.enterOuterAlt(localctx, 1);
             this.state = 137;
             this.if_stmt();
             break;
-        case Python3Parser.WHILE:
+        case PythonLikeParser.WHILE:
             this.enterOuterAlt(localctx, 2);
             this.state = 138;
             this.while_stmt();
             break;
-        case Python3Parser.T__0:
+        case PythonLikeParser.T__0:
             this.enterOuterAlt(localctx, 3);
             this.state = 139;
             this.for_stmt();
             break;
-        case Python3Parser.DEF:
+        case PythonLikeParser.DEF:
             this.enterOuterAlt(localctx, 4);
             this.state = 140;
             this.funcdef();
@@ -1295,7 +1295,7 @@ function If_stmtContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_if_stmt;
+    this.ruleIndex = PythonLikeParser.RULE_if_stmt;
     return this;
 }
 
@@ -1303,7 +1303,7 @@ If_stmtContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 If_stmtContext.prototype.constructor = If_stmtContext;
 
 If_stmtContext.prototype.IF = function() {
-    return this.getToken(Python3Parser.IF, 0);
+    return this.getToken(PythonLikeParser.IF, 0);
 };
 
 If_stmtContext.prototype.test = function(i) {
@@ -1333,19 +1333,19 @@ If_stmtContext.prototype.ELIF = function(i) {
 		i = null;
 	}
     if(i===null) {
-        return this.getTokens(Python3Parser.ELIF);
+        return this.getTokens(PythonLikeParser.ELIF);
     } else {
-        return this.getToken(Python3Parser.ELIF, i);
+        return this.getToken(PythonLikeParser.ELIF, i);
     }
 };
 
 
 If_stmtContext.prototype.ELSE = function() {
-    return this.getToken(Python3Parser.ELSE, 0);
+    return this.getToken(PythonLikeParser.ELSE, 0);
 };
 
 If_stmtContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitIf_stmt(this);
     } else {
         return visitor.visitChildren(this);
@@ -1355,33 +1355,33 @@ If_stmtContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.If_stmtContext = If_stmtContext;
+PythonLikeParser.If_stmtContext = If_stmtContext;
 
-Python3Parser.prototype.if_stmt = function() {
+PythonLikeParser.prototype.if_stmt = function() {
 
     var localctx = new If_stmtContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 20, Python3Parser.RULE_if_stmt);
+    this.enterRule(localctx, 20, PythonLikeParser.RULE_if_stmt);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 143;
-        this.match(Python3Parser.IF);
+        this.match(PythonLikeParser.IF);
         this.state = 144;
         this.test();
         this.state = 145;
-        this.match(Python3Parser.COLON);
+        this.match(PythonLikeParser.COLON);
         this.state = 146;
         this.suite();
         this.state = 154;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while(_la===Python3Parser.ELIF) {
+        while(_la===PythonLikeParser.ELIF) {
             this.state = 147;
-            this.match(Python3Parser.ELIF);
+            this.match(PythonLikeParser.ELIF);
             this.state = 148;
             this.test();
             this.state = 149;
-            this.match(Python3Parser.COLON);
+            this.match(PythonLikeParser.COLON);
             this.state = 150;
             this.suite();
             this.state = 156;
@@ -1391,11 +1391,11 @@ Python3Parser.prototype.if_stmt = function() {
         this.state = 160;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        if(_la===Python3Parser.ELSE) {
+        if(_la===PythonLikeParser.ELSE) {
             this.state = 157;
-            this.match(Python3Parser.ELSE);
+            this.match(PythonLikeParser.ELSE);
             this.state = 158;
-            this.match(Python3Parser.COLON);
+            this.match(PythonLikeParser.COLON);
             this.state = 159;
             this.suite();
         }
@@ -1423,7 +1423,7 @@ function While_stmtContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_while_stmt;
+    this.ruleIndex = PythonLikeParser.RULE_while_stmt;
     return this;
 }
 
@@ -1431,7 +1431,7 @@ While_stmtContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 While_stmtContext.prototype.constructor = While_stmtContext;
 
 While_stmtContext.prototype.WHILE = function() {
-    return this.getToken(Python3Parser.WHILE, 0);
+    return this.getToken(PythonLikeParser.WHILE, 0);
 };
 
 While_stmtContext.prototype.test = function() {
@@ -1443,7 +1443,7 @@ While_stmtContext.prototype.suite = function() {
 };
 
 While_stmtContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitWhile_stmt(this);
     } else {
         return visitor.visitChildren(this);
@@ -1453,20 +1453,20 @@ While_stmtContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.While_stmtContext = While_stmtContext;
+PythonLikeParser.While_stmtContext = While_stmtContext;
 
-Python3Parser.prototype.while_stmt = function() {
+PythonLikeParser.prototype.while_stmt = function() {
 
     var localctx = new While_stmtContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 22, Python3Parser.RULE_while_stmt);
+    this.enterRule(localctx, 22, PythonLikeParser.RULE_while_stmt);
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 162;
-        this.match(Python3Parser.WHILE);
+        this.match(PythonLikeParser.WHILE);
         this.state = 163;
         this.test();
         this.state = 164;
-        this.match(Python3Parser.COLON);
+        this.match(PythonLikeParser.COLON);
         this.state = 165;
         this.suite();
     } catch (re) {
@@ -1492,7 +1492,7 @@ function For_stmtContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_for_stmt;
+    this.ruleIndex = PythonLikeParser.RULE_for_stmt;
     return this;
 }
 
@@ -1512,7 +1512,7 @@ For_stmtContext.prototype.suite = function() {
 };
 
 For_stmtContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitFor_stmt(this);
     } else {
         return visitor.visitChildren(this);
@@ -1522,24 +1522,24 @@ For_stmtContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.For_stmtContext = For_stmtContext;
+PythonLikeParser.For_stmtContext = For_stmtContext;
 
-Python3Parser.prototype.for_stmt = function() {
+PythonLikeParser.prototype.for_stmt = function() {
 
     var localctx = new For_stmtContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 24, Python3Parser.RULE_for_stmt);
+    this.enterRule(localctx, 24, PythonLikeParser.RULE_for_stmt);
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 167;
-        this.match(Python3Parser.T__0);
+        this.match(PythonLikeParser.T__0);
         this.state = 168;
         this.atom();
         this.state = 169;
-        this.match(Python3Parser.T__1);
+        this.match(PythonLikeParser.T__1);
         this.state = 170;
         this.testlist();
         this.state = 171;
-        this.match(Python3Parser.COLON);
+        this.match(PythonLikeParser.COLON);
         this.state = 172;
         this.suite();
     } catch (re) {
@@ -1565,7 +1565,7 @@ function SuiteContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_suite;
+    this.ruleIndex = PythonLikeParser.RULE_suite;
     return this;
 }
 
@@ -1577,15 +1577,15 @@ SuiteContext.prototype.simple_stmt = function() {
 };
 
 SuiteContext.prototype.NEWLINE = function() {
-    return this.getToken(Python3Parser.NEWLINE, 0);
+    return this.getToken(PythonLikeParser.NEWLINE, 0);
 };
 
 SuiteContext.prototype.INDENT = function() {
-    return this.getToken(Python3Parser.INDENT, 0);
+    return this.getToken(PythonLikeParser.INDENT, 0);
 };
 
 SuiteContext.prototype.DEDENT = function() {
-    return this.getToken(Python3Parser.DEDENT, 0);
+    return this.getToken(PythonLikeParser.DEDENT, 0);
 };
 
 SuiteContext.prototype.stmt = function(i) {
@@ -1600,7 +1600,7 @@ SuiteContext.prototype.stmt = function(i) {
 };
 
 SuiteContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitSuite(this);
     } else {
         return visitor.visitChildren(this);
@@ -1610,44 +1610,44 @@ SuiteContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.SuiteContext = SuiteContext;
+PythonLikeParser.SuiteContext = SuiteContext;
 
-Python3Parser.prototype.suite = function() {
+PythonLikeParser.prototype.suite = function() {
 
     var localctx = new SuiteContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 26, Python3Parser.RULE_suite);
+    this.enterRule(localctx, 26, PythonLikeParser.RULE_suite);
     var _la = 0; // Token type
     try {
         this.state = 184;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
-        case Python3Parser.T__2:
-        case Python3Parser.T__4:
-        case Python3Parser.RETURN:
-        case Python3Parser.NOT:
-        case Python3Parser.NONE:
-        case Python3Parser.TRUE:
-        case Python3Parser.FALSE:
-        case Python3Parser.PASS:
-        case Python3Parser.CONTINUE:
-        case Python3Parser.BREAK:
-        case Python3Parser.NAME:
-        case Python3Parser.STRING_LITERAL:
-        case Python3Parser.DECIMAL_INTEGER:
-        case Python3Parser.FLOAT_NUMBER:
-        case Python3Parser.OPEN_PAREN:
-        case Python3Parser.ADD:
-        case Python3Parser.MINUS:
+        case PythonLikeParser.T__2:
+        case PythonLikeParser.T__4:
+        case PythonLikeParser.RETURN:
+        case PythonLikeParser.NOT:
+        case PythonLikeParser.NONE:
+        case PythonLikeParser.TRUE:
+        case PythonLikeParser.FALSE:
+        case PythonLikeParser.PASS:
+        case PythonLikeParser.CONTINUE:
+        case PythonLikeParser.BREAK:
+        case PythonLikeParser.NAME:
+        case PythonLikeParser.STRING_LITERAL:
+        case PythonLikeParser.DECIMAL_INTEGER:
+        case PythonLikeParser.FLOAT_NUMBER:
+        case PythonLikeParser.OPEN_PAREN:
+        case PythonLikeParser.ADD:
+        case PythonLikeParser.MINUS:
             this.enterOuterAlt(localctx, 1);
             this.state = 174;
             this.simple_stmt();
             break;
-        case Python3Parser.NEWLINE:
+        case PythonLikeParser.NEWLINE:
             this.enterOuterAlt(localctx, 2);
             this.state = 175;
-            this.match(Python3Parser.NEWLINE);
+            this.match(PythonLikeParser.NEWLINE);
             this.state = 176;
-            this.match(Python3Parser.INDENT);
+            this.match(PythonLikeParser.INDENT);
             this.state = 178; 
             this._errHandler.sync(this);
             _la = this._input.LA(1);
@@ -1657,9 +1657,9 @@ Python3Parser.prototype.suite = function() {
                 this.state = 180; 
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-            } while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << Python3Parser.T__0) | (1 << Python3Parser.T__2) | (1 << Python3Parser.T__4) | (1 << Python3Parser.DEF) | (1 << Python3Parser.RETURN) | (1 << Python3Parser.IF) | (1 << Python3Parser.WHILE) | (1 << Python3Parser.NOT) | (1 << Python3Parser.NONE) | (1 << Python3Parser.TRUE) | (1 << Python3Parser.FALSE) | (1 << Python3Parser.PASS) | (1 << Python3Parser.CONTINUE) | (1 << Python3Parser.BREAK) | (1 << Python3Parser.NAME) | (1 << Python3Parser.STRING_LITERAL) | (1 << Python3Parser.DECIMAL_INTEGER) | (1 << Python3Parser.FLOAT_NUMBER) | (1 << Python3Parser.OPEN_PAREN))) !== 0) || _la===Python3Parser.ADD || _la===Python3Parser.MINUS);
+            } while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << PythonLikeParser.T__0) | (1 << PythonLikeParser.T__2) | (1 << PythonLikeParser.T__4) | (1 << PythonLikeParser.DEF) | (1 << PythonLikeParser.RETURN) | (1 << PythonLikeParser.IF) | (1 << PythonLikeParser.WHILE) | (1 << PythonLikeParser.NOT) | (1 << PythonLikeParser.NONE) | (1 << PythonLikeParser.TRUE) | (1 << PythonLikeParser.FALSE) | (1 << PythonLikeParser.PASS) | (1 << PythonLikeParser.CONTINUE) | (1 << PythonLikeParser.BREAK) | (1 << PythonLikeParser.NAME) | (1 << PythonLikeParser.STRING_LITERAL) | (1 << PythonLikeParser.DECIMAL_INTEGER) | (1 << PythonLikeParser.FLOAT_NUMBER) | (1 << PythonLikeParser.OPEN_PAREN))) !== 0) || _la===PythonLikeParser.ADD || _la===PythonLikeParser.MINUS);
             this.state = 182;
-            this.match(Python3Parser.DEDENT);
+            this.match(PythonLikeParser.DEDENT);
             break;
         default:
             throw new antlr4.error.NoViableAltException(this);
@@ -1687,7 +1687,7 @@ function TestContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_test;
+    this.ruleIndex = PythonLikeParser.RULE_test;
     return this;
 }
 
@@ -1699,7 +1699,7 @@ TestContext.prototype.or_test = function() {
 };
 
 TestContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitTest(this);
     } else {
         return visitor.visitChildren(this);
@@ -1709,12 +1709,12 @@ TestContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.TestContext = TestContext;
+PythonLikeParser.TestContext = TestContext;
 
-Python3Parser.prototype.test = function() {
+PythonLikeParser.prototype.test = function() {
 
     var localctx = new TestContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 28, Python3Parser.RULE_test);
+    this.enterRule(localctx, 28, PythonLikeParser.RULE_test);
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 186;
@@ -1742,7 +1742,7 @@ function Or_testContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_or_test;
+    this.ruleIndex = PythonLikeParser.RULE_or_test;
     return this;
 }
 
@@ -1765,15 +1765,15 @@ Or_testContext.prototype.OR = function(i) {
 		i = null;
 	}
     if(i===null) {
-        return this.getTokens(Python3Parser.OR);
+        return this.getTokens(PythonLikeParser.OR);
     } else {
-        return this.getToken(Python3Parser.OR, i);
+        return this.getToken(PythonLikeParser.OR, i);
     }
 };
 
 
 Or_testContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitOr_test(this);
     } else {
         return visitor.visitChildren(this);
@@ -1783,12 +1783,12 @@ Or_testContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.Or_testContext = Or_testContext;
+PythonLikeParser.Or_testContext = Or_testContext;
 
-Python3Parser.prototype.or_test = function() {
+PythonLikeParser.prototype.or_test = function() {
 
     var localctx = new Or_testContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 30, Python3Parser.RULE_or_test);
+    this.enterRule(localctx, 30, PythonLikeParser.RULE_or_test);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
@@ -1797,9 +1797,9 @@ Python3Parser.prototype.or_test = function() {
         this.state = 193;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while(_la===Python3Parser.OR) {
+        while(_la===PythonLikeParser.OR) {
             this.state = 189;
-            this.match(Python3Parser.OR);
+            this.match(PythonLikeParser.OR);
             this.state = 190;
             this.and_test();
             this.state = 195;
@@ -1829,7 +1829,7 @@ function And_testContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_and_test;
+    this.ruleIndex = PythonLikeParser.RULE_and_test;
     return this;
 }
 
@@ -1852,15 +1852,15 @@ And_testContext.prototype.AND = function(i) {
 		i = null;
 	}
     if(i===null) {
-        return this.getTokens(Python3Parser.AND);
+        return this.getTokens(PythonLikeParser.AND);
     } else {
-        return this.getToken(Python3Parser.AND, i);
+        return this.getToken(PythonLikeParser.AND, i);
     }
 };
 
 
 And_testContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitAnd_test(this);
     } else {
         return visitor.visitChildren(this);
@@ -1870,12 +1870,12 @@ And_testContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.And_testContext = And_testContext;
+PythonLikeParser.And_testContext = And_testContext;
 
-Python3Parser.prototype.and_test = function() {
+PythonLikeParser.prototype.and_test = function() {
 
     var localctx = new And_testContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 32, Python3Parser.RULE_and_test);
+    this.enterRule(localctx, 32, PythonLikeParser.RULE_and_test);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
@@ -1884,9 +1884,9 @@ Python3Parser.prototype.and_test = function() {
         this.state = 201;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while(_la===Python3Parser.AND) {
+        while(_la===PythonLikeParser.AND) {
             this.state = 197;
-            this.match(Python3Parser.AND);
+            this.match(PythonLikeParser.AND);
             this.state = 198;
             this.not_test();
             this.state = 203;
@@ -1916,7 +1916,7 @@ function Not_testContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_not_test;
+    this.ruleIndex = PythonLikeParser.RULE_not_test;
     return this;
 }
 
@@ -1924,7 +1924,7 @@ Not_testContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 Not_testContext.prototype.constructor = Not_testContext;
 
 Not_testContext.prototype.NOT = function() {
-    return this.getToken(Python3Parser.NOT, 0);
+    return this.getToken(PythonLikeParser.NOT, 0);
 };
 
 Not_testContext.prototype.not_test = function() {
@@ -1936,7 +1936,7 @@ Not_testContext.prototype.comparison = function() {
 };
 
 Not_testContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitNot_test(this);
     } else {
         return visitor.visitChildren(this);
@@ -1946,35 +1946,35 @@ Not_testContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.Not_testContext = Not_testContext;
+PythonLikeParser.Not_testContext = Not_testContext;
 
-Python3Parser.prototype.not_test = function() {
+PythonLikeParser.prototype.not_test = function() {
 
     var localctx = new Not_testContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 34, Python3Parser.RULE_not_test);
+    this.enterRule(localctx, 34, PythonLikeParser.RULE_not_test);
     try {
         this.state = 207;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
-        case Python3Parser.NOT:
+        case PythonLikeParser.NOT:
             this.enterOuterAlt(localctx, 1);
             this.state = 204;
-            this.match(Python3Parser.NOT);
+            this.match(PythonLikeParser.NOT);
             this.state = 205;
             this.not_test();
             break;
-        case Python3Parser.T__2:
-        case Python3Parser.T__4:
-        case Python3Parser.NONE:
-        case Python3Parser.TRUE:
-        case Python3Parser.FALSE:
-        case Python3Parser.NAME:
-        case Python3Parser.STRING_LITERAL:
-        case Python3Parser.DECIMAL_INTEGER:
-        case Python3Parser.FLOAT_NUMBER:
-        case Python3Parser.OPEN_PAREN:
-        case Python3Parser.ADD:
-        case Python3Parser.MINUS:
+        case PythonLikeParser.T__2:
+        case PythonLikeParser.T__4:
+        case PythonLikeParser.NONE:
+        case PythonLikeParser.TRUE:
+        case PythonLikeParser.FALSE:
+        case PythonLikeParser.NAME:
+        case PythonLikeParser.STRING_LITERAL:
+        case PythonLikeParser.DECIMAL_INTEGER:
+        case PythonLikeParser.FLOAT_NUMBER:
+        case PythonLikeParser.OPEN_PAREN:
+        case PythonLikeParser.ADD:
+        case PythonLikeParser.MINUS:
             this.enterOuterAlt(localctx, 2);
             this.state = 206;
             this.comparison();
@@ -2005,7 +2005,7 @@ function ComparisonContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_comparison;
+    this.ruleIndex = PythonLikeParser.RULE_comparison;
     return this;
 }
 
@@ -2035,7 +2035,7 @@ ComparisonContext.prototype.comp_op = function(i) {
 };
 
 ComparisonContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitComparison(this);
     } else {
         return visitor.visitChildren(this);
@@ -2045,12 +2045,12 @@ ComparisonContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.ComparisonContext = ComparisonContext;
+PythonLikeParser.ComparisonContext = ComparisonContext;
 
-Python3Parser.prototype.comparison = function() {
+PythonLikeParser.prototype.comparison = function() {
 
     var localctx = new ComparisonContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 36, Python3Parser.RULE_comparison);
+    this.enterRule(localctx, 36, PythonLikeParser.RULE_comparison);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
@@ -2059,7 +2059,7 @@ Python3Parser.prototype.comparison = function() {
         this.state = 215;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while(((((_la - 39)) & ~0x1f) == 0 && ((1 << (_la - 39)) & ((1 << (Python3Parser.LESS_THAN - 39)) | (1 << (Python3Parser.GREATER_THAN - 39)) | (1 << (Python3Parser.EQUALS - 39)) | (1 << (Python3Parser.GT_EQ - 39)) | (1 << (Python3Parser.LT_EQ - 39)) | (1 << (Python3Parser.NOT_EQ - 39)))) !== 0)) {
+        while(((((_la - 39)) & ~0x1f) == 0 && ((1 << (_la - 39)) & ((1 << (PythonLikeParser.LESS_THAN - 39)) | (1 << (PythonLikeParser.GREATER_THAN - 39)) | (1 << (PythonLikeParser.EQUALS - 39)) | (1 << (PythonLikeParser.GT_EQ - 39)) | (1 << (PythonLikeParser.LT_EQ - 39)) | (1 << (PythonLikeParser.NOT_EQ - 39)))) !== 0)) {
             this.state = 210;
             this.comp_op();
             this.state = 211;
@@ -2091,7 +2091,7 @@ function Comp_opContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_comp_op;
+    this.ruleIndex = PythonLikeParser.RULE_comp_op;
     return this;
 }
 
@@ -2100,7 +2100,7 @@ Comp_opContext.prototype.constructor = Comp_opContext;
 
 
 Comp_opContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitComp_op(this);
     } else {
         return visitor.visitChildren(this);
@@ -2110,18 +2110,18 @@ Comp_opContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.Comp_opContext = Comp_opContext;
+PythonLikeParser.Comp_opContext = Comp_opContext;
 
-Python3Parser.prototype.comp_op = function() {
+PythonLikeParser.prototype.comp_op = function() {
 
     var localctx = new Comp_opContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 38, Python3Parser.RULE_comp_op);
+    this.enterRule(localctx, 38, PythonLikeParser.RULE_comp_op);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 218;
         _la = this._input.LA(1);
-        if(!(((((_la - 39)) & ~0x1f) == 0 && ((1 << (_la - 39)) & ((1 << (Python3Parser.LESS_THAN - 39)) | (1 << (Python3Parser.GREATER_THAN - 39)) | (1 << (Python3Parser.EQUALS - 39)) | (1 << (Python3Parser.GT_EQ - 39)) | (1 << (Python3Parser.LT_EQ - 39)) | (1 << (Python3Parser.NOT_EQ - 39)))) !== 0))) {
+        if(!(((((_la - 39)) & ~0x1f) == 0 && ((1 << (_la - 39)) & ((1 << (PythonLikeParser.LESS_THAN - 39)) | (1 << (PythonLikeParser.GREATER_THAN - 39)) | (1 << (PythonLikeParser.EQUALS - 39)) | (1 << (PythonLikeParser.GT_EQ - 39)) | (1 << (PythonLikeParser.LT_EQ - 39)) | (1 << (PythonLikeParser.NOT_EQ - 39)))) !== 0))) {
         this._errHandler.recoverInline(this);
         }
         else {
@@ -2151,7 +2151,7 @@ function ExprContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_expr;
+    this.ruleIndex = PythonLikeParser.RULE_expr;
     return this;
 }
 
@@ -2170,7 +2170,7 @@ ExprContext.prototype.term = function(i) {
 };
 
 ExprContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitExpr(this);
     } else {
         return visitor.visitChildren(this);
@@ -2180,12 +2180,12 @@ ExprContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.ExprContext = ExprContext;
+PythonLikeParser.ExprContext = ExprContext;
 
-Python3Parser.prototype.expr = function() {
+PythonLikeParser.prototype.expr = function() {
 
     var localctx = new ExprContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 40, Python3Parser.RULE_expr);
+    this.enterRule(localctx, 40, PythonLikeParser.RULE_expr);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
@@ -2194,19 +2194,19 @@ Python3Parser.prototype.expr = function() {
         this.state = 227;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while(_la===Python3Parser.ADD || _la===Python3Parser.MINUS) {
+        while(_la===PythonLikeParser.ADD || _la===PythonLikeParser.MINUS) {
             this.state = 225;
             this._errHandler.sync(this);
             switch(this._input.LA(1)) {
-            case Python3Parser.ADD:
+            case PythonLikeParser.ADD:
                 this.state = 221;
-                this.match(Python3Parser.ADD);
+                this.match(PythonLikeParser.ADD);
                 this.state = 222;
                 this.term();
                 break;
-            case Python3Parser.MINUS:
+            case PythonLikeParser.MINUS:
                 this.state = 223;
-                this.match(Python3Parser.MINUS);
+                this.match(PythonLikeParser.MINUS);
                 this.state = 224;
                 this.term();
                 break;
@@ -2240,7 +2240,7 @@ function TermContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_term;
+    this.ruleIndex = PythonLikeParser.RULE_term;
     return this;
 }
 
@@ -2259,7 +2259,7 @@ TermContext.prototype.factor = function(i) {
 };
 
 TermContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitTerm(this);
     } else {
         return visitor.visitChildren(this);
@@ -2269,12 +2269,12 @@ TermContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.TermContext = TermContext;
+PythonLikeParser.TermContext = TermContext;
 
-Python3Parser.prototype.term = function() {
+PythonLikeParser.prototype.term = function() {
 
     var localctx = new TermContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 42, Python3Parser.RULE_term);
+    this.enterRule(localctx, 42, PythonLikeParser.RULE_term);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
@@ -2283,25 +2283,25 @@ Python3Parser.prototype.term = function() {
         this.state = 239;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while(((((_la - 28)) & ~0x1f) == 0 && ((1 << (_la - 28)) & ((1 << (Python3Parser.STAR - 28)) | (1 << (Python3Parser.DIV - 28)) | (1 << (Python3Parser.MOD - 28)))) !== 0)) {
+        while(((((_la - 28)) & ~0x1f) == 0 && ((1 << (_la - 28)) & ((1 << (PythonLikeParser.STAR - 28)) | (1 << (PythonLikeParser.DIV - 28)) | (1 << (PythonLikeParser.MOD - 28)))) !== 0)) {
             this.state = 237;
             this._errHandler.sync(this);
             switch(this._input.LA(1)) {
-            case Python3Parser.STAR:
+            case PythonLikeParser.STAR:
                 this.state = 231;
-                this.match(Python3Parser.STAR);
+                this.match(PythonLikeParser.STAR);
                 this.state = 232;
                 this.factor();
                 break;
-            case Python3Parser.DIV:
+            case PythonLikeParser.DIV:
                 this.state = 233;
-                this.match(Python3Parser.DIV);
+                this.match(PythonLikeParser.DIV);
                 this.state = 234;
                 this.factor();
                 break;
-            case Python3Parser.MOD:
+            case PythonLikeParser.MOD:
                 this.state = 235;
-                this.match(Python3Parser.MOD);
+                this.match(PythonLikeParser.MOD);
                 this.state = 236;
                 this.factor();
                 break;
@@ -2335,7 +2335,7 @@ function FactorContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_factor;
+    this.ruleIndex = PythonLikeParser.RULE_factor;
     return this;
 }
 
@@ -2351,7 +2351,7 @@ FactorContext.prototype.power = function() {
 };
 
 FactorContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitFactor(this);
     } else {
         return visitor.visitChildren(this);
@@ -2361,40 +2361,40 @@ FactorContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.FactorContext = FactorContext;
+PythonLikeParser.FactorContext = FactorContext;
 
-Python3Parser.prototype.factor = function() {
+PythonLikeParser.prototype.factor = function() {
 
     var localctx = new FactorContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 44, Python3Parser.RULE_factor);
+    this.enterRule(localctx, 44, PythonLikeParser.RULE_factor);
     try {
         this.state = 247;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
-        case Python3Parser.ADD:
+        case PythonLikeParser.ADD:
             this.enterOuterAlt(localctx, 1);
             this.state = 242;
-            this.match(Python3Parser.ADD);
+            this.match(PythonLikeParser.ADD);
             this.state = 243;
             this.factor();
             break;
-        case Python3Parser.MINUS:
+        case PythonLikeParser.MINUS:
             this.enterOuterAlt(localctx, 2);
             this.state = 244;
-            this.match(Python3Parser.MINUS);
+            this.match(PythonLikeParser.MINUS);
             this.state = 245;
             this.factor();
             break;
-        case Python3Parser.T__2:
-        case Python3Parser.T__4:
-        case Python3Parser.NONE:
-        case Python3Parser.TRUE:
-        case Python3Parser.FALSE:
-        case Python3Parser.NAME:
-        case Python3Parser.STRING_LITERAL:
-        case Python3Parser.DECIMAL_INTEGER:
-        case Python3Parser.FLOAT_NUMBER:
-        case Python3Parser.OPEN_PAREN:
+        case PythonLikeParser.T__2:
+        case PythonLikeParser.T__4:
+        case PythonLikeParser.NONE:
+        case PythonLikeParser.TRUE:
+        case PythonLikeParser.FALSE:
+        case PythonLikeParser.NAME:
+        case PythonLikeParser.STRING_LITERAL:
+        case PythonLikeParser.DECIMAL_INTEGER:
+        case PythonLikeParser.FLOAT_NUMBER:
+        case PythonLikeParser.OPEN_PAREN:
             this.enterOuterAlt(localctx, 3);
             this.state = 246;
             this.power();
@@ -2425,7 +2425,7 @@ function PowerContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_power;
+    this.ruleIndex = PythonLikeParser.RULE_power;
     return this;
 }
 
@@ -2448,7 +2448,7 @@ PowerContext.prototype.trailer = function(i) {
 };
 
 PowerContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitPower(this);
     } else {
         return visitor.visitChildren(this);
@@ -2458,12 +2458,12 @@ PowerContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.PowerContext = PowerContext;
+PythonLikeParser.PowerContext = PowerContext;
 
-Python3Parser.prototype.power = function() {
+PythonLikeParser.prototype.power = function() {
 
     var localctx = new PowerContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 46, Python3Parser.RULE_power);
+    this.enterRule(localctx, 46, PythonLikeParser.RULE_power);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
@@ -2472,7 +2472,7 @@ Python3Parser.prototype.power = function() {
         this.state = 253;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << Python3Parser.T__2) | (1 << Python3Parser.DOT) | (1 << Python3Parser.OPEN_PAREN))) !== 0)) {
+        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << PythonLikeParser.T__2) | (1 << PythonLikeParser.DOT) | (1 << PythonLikeParser.OPEN_PAREN))) !== 0)) {
             this.state = 250;
             this.trailer();
             this.state = 255;
@@ -2502,7 +2502,7 @@ function AtomContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_atom;
+    this.ruleIndex = PythonLikeParser.RULE_atom;
     return this;
 }
 
@@ -2518,7 +2518,7 @@ AtomContext.prototype.dictorsetmaker = function() {
 };
 
 AtomContext.prototype.NAME = function() {
-    return this.getToken(Python3Parser.NAME, 0);
+    return this.getToken(PythonLikeParser.NAME, 0);
 };
 
 AtomContext.prototype.number = function() {
@@ -2530,27 +2530,27 @@ AtomContext.prototype.STRING_LITERAL = function(i) {
 		i = null;
 	}
     if(i===null) {
-        return this.getTokens(Python3Parser.STRING_LITERAL);
+        return this.getTokens(PythonLikeParser.STRING_LITERAL);
     } else {
-        return this.getToken(Python3Parser.STRING_LITERAL, i);
+        return this.getToken(PythonLikeParser.STRING_LITERAL, i);
     }
 };
 
 
 AtomContext.prototype.NONE = function() {
-    return this.getToken(Python3Parser.NONE, 0);
+    return this.getToken(PythonLikeParser.NONE, 0);
 };
 
 AtomContext.prototype.TRUE = function() {
-    return this.getToken(Python3Parser.TRUE, 0);
+    return this.getToken(PythonLikeParser.TRUE, 0);
 };
 
 AtomContext.prototype.FALSE = function() {
-    return this.getToken(Python3Parser.FALSE, 0);
+    return this.getToken(PythonLikeParser.FALSE, 0);
 };
 
 AtomContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitAtom(this);
     } else {
         return visitor.visitChildren(this);
@@ -2560,100 +2560,100 @@ AtomContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.AtomContext = AtomContext;
+PythonLikeParser.AtomContext = AtomContext;
 
-Python3Parser.prototype.atom = function() {
+PythonLikeParser.prototype.atom = function() {
 
     var localctx = new AtomContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 48, Python3Parser.RULE_atom);
+    this.enterRule(localctx, 48, PythonLikeParser.RULE_atom);
     var _la = 0; // Token type
     try {
         this.state = 281;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
-        case Python3Parser.OPEN_PAREN:
+        case PythonLikeParser.OPEN_PAREN:
             this.enterOuterAlt(localctx, 1);
             this.state = 256;
-            this.match(Python3Parser.OPEN_PAREN);
+            this.match(PythonLikeParser.OPEN_PAREN);
             this.state = 258;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << Python3Parser.T__2) | (1 << Python3Parser.T__4) | (1 << Python3Parser.NOT) | (1 << Python3Parser.NONE) | (1 << Python3Parser.TRUE) | (1 << Python3Parser.FALSE) | (1 << Python3Parser.NAME) | (1 << Python3Parser.STRING_LITERAL) | (1 << Python3Parser.DECIMAL_INTEGER) | (1 << Python3Parser.FLOAT_NUMBER) | (1 << Python3Parser.OPEN_PAREN))) !== 0) || _la===Python3Parser.ADD || _la===Python3Parser.MINUS) {
+            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << PythonLikeParser.T__2) | (1 << PythonLikeParser.T__4) | (1 << PythonLikeParser.NOT) | (1 << PythonLikeParser.NONE) | (1 << PythonLikeParser.TRUE) | (1 << PythonLikeParser.FALSE) | (1 << PythonLikeParser.NAME) | (1 << PythonLikeParser.STRING_LITERAL) | (1 << PythonLikeParser.DECIMAL_INTEGER) | (1 << PythonLikeParser.FLOAT_NUMBER) | (1 << PythonLikeParser.OPEN_PAREN))) !== 0) || _la===PythonLikeParser.ADD || _la===PythonLikeParser.MINUS) {
                 this.state = 257;
                 this.testlist();
             }
 
             this.state = 260;
-            this.match(Python3Parser.CLOSE_PAREN);
+            this.match(PythonLikeParser.CLOSE_PAREN);
             break;
-        case Python3Parser.T__2:
+        case PythonLikeParser.T__2:
             this.enterOuterAlt(localctx, 2);
             this.state = 261;
-            this.match(Python3Parser.T__2);
+            this.match(PythonLikeParser.T__2);
             this.state = 263;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << Python3Parser.T__2) | (1 << Python3Parser.T__4) | (1 << Python3Parser.NOT) | (1 << Python3Parser.NONE) | (1 << Python3Parser.TRUE) | (1 << Python3Parser.FALSE) | (1 << Python3Parser.NAME) | (1 << Python3Parser.STRING_LITERAL) | (1 << Python3Parser.DECIMAL_INTEGER) | (1 << Python3Parser.FLOAT_NUMBER) | (1 << Python3Parser.OPEN_PAREN))) !== 0) || _la===Python3Parser.ADD || _la===Python3Parser.MINUS) {
+            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << PythonLikeParser.T__2) | (1 << PythonLikeParser.T__4) | (1 << PythonLikeParser.NOT) | (1 << PythonLikeParser.NONE) | (1 << PythonLikeParser.TRUE) | (1 << PythonLikeParser.FALSE) | (1 << PythonLikeParser.NAME) | (1 << PythonLikeParser.STRING_LITERAL) | (1 << PythonLikeParser.DECIMAL_INTEGER) | (1 << PythonLikeParser.FLOAT_NUMBER) | (1 << PythonLikeParser.OPEN_PAREN))) !== 0) || _la===PythonLikeParser.ADD || _la===PythonLikeParser.MINUS) {
                 this.state = 262;
                 this.testlist();
             }
 
             this.state = 265;
-            this.match(Python3Parser.T__3);
+            this.match(PythonLikeParser.T__3);
             break;
-        case Python3Parser.T__4:
+        case PythonLikeParser.T__4:
             this.enterOuterAlt(localctx, 3);
             this.state = 266;
-            this.match(Python3Parser.T__4);
+            this.match(PythonLikeParser.T__4);
             this.state = 268;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << Python3Parser.T__2) | (1 << Python3Parser.T__4) | (1 << Python3Parser.NOT) | (1 << Python3Parser.NONE) | (1 << Python3Parser.TRUE) | (1 << Python3Parser.FALSE) | (1 << Python3Parser.NAME) | (1 << Python3Parser.STRING_LITERAL) | (1 << Python3Parser.DECIMAL_INTEGER) | (1 << Python3Parser.FLOAT_NUMBER) | (1 << Python3Parser.OPEN_PAREN))) !== 0) || _la===Python3Parser.ADD || _la===Python3Parser.MINUS) {
+            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << PythonLikeParser.T__2) | (1 << PythonLikeParser.T__4) | (1 << PythonLikeParser.NOT) | (1 << PythonLikeParser.NONE) | (1 << PythonLikeParser.TRUE) | (1 << PythonLikeParser.FALSE) | (1 << PythonLikeParser.NAME) | (1 << PythonLikeParser.STRING_LITERAL) | (1 << PythonLikeParser.DECIMAL_INTEGER) | (1 << PythonLikeParser.FLOAT_NUMBER) | (1 << PythonLikeParser.OPEN_PAREN))) !== 0) || _la===PythonLikeParser.ADD || _la===PythonLikeParser.MINUS) {
                 this.state = 267;
                 this.dictorsetmaker();
             }
 
             this.state = 270;
-            this.match(Python3Parser.T__5);
+            this.match(PythonLikeParser.T__5);
             break;
-        case Python3Parser.NAME:
+        case PythonLikeParser.NAME:
             this.enterOuterAlt(localctx, 4);
             this.state = 271;
-            this.match(Python3Parser.NAME);
+            this.match(PythonLikeParser.NAME);
             break;
-        case Python3Parser.DECIMAL_INTEGER:
-        case Python3Parser.FLOAT_NUMBER:
+        case PythonLikeParser.DECIMAL_INTEGER:
+        case PythonLikeParser.FLOAT_NUMBER:
             this.enterOuterAlt(localctx, 5);
             this.state = 272;
             this.number();
             break;
-        case Python3Parser.STRING_LITERAL:
+        case PythonLikeParser.STRING_LITERAL:
             this.enterOuterAlt(localctx, 6);
             this.state = 274; 
             this._errHandler.sync(this);
             _la = this._input.LA(1);
             do {
                 this.state = 273;
-                this.match(Python3Parser.STRING_LITERAL);
+                this.match(PythonLikeParser.STRING_LITERAL);
                 this.state = 276; 
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-            } while(_la===Python3Parser.STRING_LITERAL);
+            } while(_la===PythonLikeParser.STRING_LITERAL);
             break;
-        case Python3Parser.NONE:
+        case PythonLikeParser.NONE:
             this.enterOuterAlt(localctx, 7);
             this.state = 278;
-            this.match(Python3Parser.NONE);
+            this.match(PythonLikeParser.NONE);
             break;
-        case Python3Parser.TRUE:
+        case PythonLikeParser.TRUE:
             this.enterOuterAlt(localctx, 8);
             this.state = 279;
-            this.match(Python3Parser.TRUE);
+            this.match(PythonLikeParser.TRUE);
             break;
-        case Python3Parser.FALSE:
+        case PythonLikeParser.FALSE:
             this.enterOuterAlt(localctx, 9);
             this.state = 280;
-            this.match(Python3Parser.FALSE);
+            this.match(PythonLikeParser.FALSE);
             break;
         default:
             throw new antlr4.error.NoViableAltException(this);
@@ -2681,7 +2681,7 @@ function TestlistContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_testlist;
+    this.ruleIndex = PythonLikeParser.RULE_testlist;
     return this;
 }
 
@@ -2700,7 +2700,7 @@ TestlistContext.prototype.test = function(i) {
 };
 
 TestlistContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitTestlist(this);
     } else {
         return visitor.visitChildren(this);
@@ -2710,12 +2710,12 @@ TestlistContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.TestlistContext = TestlistContext;
+PythonLikeParser.TestlistContext = TestlistContext;
 
-Python3Parser.prototype.testlist = function() {
+PythonLikeParser.prototype.testlist = function() {
 
     var localctx = new TestlistContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 50, Python3Parser.RULE_testlist);
+    this.enterRule(localctx, 50, PythonLikeParser.RULE_testlist);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
@@ -2724,9 +2724,9 @@ Python3Parser.prototype.testlist = function() {
         this.state = 288;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        while(_la===Python3Parser.COMMA) {
+        while(_la===PythonLikeParser.COMMA) {
             this.state = 284;
-            this.match(Python3Parser.COMMA);
+            this.match(PythonLikeParser.COMMA);
             this.state = 285;
             this.test();
             this.state = 290;
@@ -2756,7 +2756,7 @@ function TrailerContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_trailer;
+    this.ruleIndex = PythonLikeParser.RULE_trailer;
     return this;
 }
 
@@ -2772,11 +2772,11 @@ TrailerContext.prototype.test = function() {
 };
 
 TrailerContext.prototype.NAME = function() {
-    return this.getToken(Python3Parser.NAME, 0);
+    return this.getToken(PythonLikeParser.NAME, 0);
 };
 
 TrailerContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitTrailer(this);
     } else {
         return visitor.visitChildren(this);
@@ -2786,47 +2786,47 @@ TrailerContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.TrailerContext = TrailerContext;
+PythonLikeParser.TrailerContext = TrailerContext;
 
-Python3Parser.prototype.trailer = function() {
+PythonLikeParser.prototype.trailer = function() {
 
     var localctx = new TrailerContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 52, Python3Parser.RULE_trailer);
+    this.enterRule(localctx, 52, PythonLikeParser.RULE_trailer);
     var _la = 0; // Token type
     try {
         this.state = 302;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
-        case Python3Parser.OPEN_PAREN:
+        case PythonLikeParser.OPEN_PAREN:
             this.enterOuterAlt(localctx, 1);
             this.state = 291;
-            this.match(Python3Parser.OPEN_PAREN);
+            this.match(PythonLikeParser.OPEN_PAREN);
             this.state = 293;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
-            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << Python3Parser.T__2) | (1 << Python3Parser.T__4) | (1 << Python3Parser.NOT) | (1 << Python3Parser.NONE) | (1 << Python3Parser.TRUE) | (1 << Python3Parser.FALSE) | (1 << Python3Parser.NAME) | (1 << Python3Parser.STRING_LITERAL) | (1 << Python3Parser.DECIMAL_INTEGER) | (1 << Python3Parser.FLOAT_NUMBER) | (1 << Python3Parser.OPEN_PAREN))) !== 0) || _la===Python3Parser.ADD || _la===Python3Parser.MINUS) {
+            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << PythonLikeParser.T__2) | (1 << PythonLikeParser.T__4) | (1 << PythonLikeParser.NOT) | (1 << PythonLikeParser.NONE) | (1 << PythonLikeParser.TRUE) | (1 << PythonLikeParser.FALSE) | (1 << PythonLikeParser.NAME) | (1 << PythonLikeParser.STRING_LITERAL) | (1 << PythonLikeParser.DECIMAL_INTEGER) | (1 << PythonLikeParser.FLOAT_NUMBER) | (1 << PythonLikeParser.OPEN_PAREN))) !== 0) || _la===PythonLikeParser.ADD || _la===PythonLikeParser.MINUS) {
                 this.state = 292;
                 this.testlist();
             }
 
             this.state = 295;
-            this.match(Python3Parser.CLOSE_PAREN);
+            this.match(PythonLikeParser.CLOSE_PAREN);
             break;
-        case Python3Parser.T__2:
+        case PythonLikeParser.T__2:
             this.enterOuterAlt(localctx, 2);
             this.state = 296;
-            this.match(Python3Parser.T__2);
+            this.match(PythonLikeParser.T__2);
             this.state = 297;
             this.test();
             this.state = 298;
-            this.match(Python3Parser.T__3);
+            this.match(PythonLikeParser.T__3);
             break;
-        case Python3Parser.DOT:
+        case PythonLikeParser.DOT:
             this.enterOuterAlt(localctx, 3);
             this.state = 300;
-            this.match(Python3Parser.DOT);
+            this.match(PythonLikeParser.DOT);
             this.state = 301;
-            this.match(Python3Parser.NAME);
+            this.match(PythonLikeParser.NAME);
             break;
         default:
             throw new antlr4.error.NoViableAltException(this);
@@ -2854,7 +2854,7 @@ function DictorsetmakerContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_dictorsetmaker;
+    this.ruleIndex = PythonLikeParser.RULE_dictorsetmaker;
     return this;
 }
 
@@ -2873,7 +2873,7 @@ DictorsetmakerContext.prototype.test = function(i) {
 };
 
 DictorsetmakerContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitDictorsetmaker(this);
     } else {
         return visitor.visitChildren(this);
@@ -2883,19 +2883,19 @@ DictorsetmakerContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.DictorsetmakerContext = DictorsetmakerContext;
+PythonLikeParser.DictorsetmakerContext = DictorsetmakerContext;
 
-Python3Parser.prototype.dictorsetmaker = function() {
+PythonLikeParser.prototype.dictorsetmaker = function() {
 
     var localctx = new DictorsetmakerContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 54, Python3Parser.RULE_dictorsetmaker);
+    this.enterRule(localctx, 54, PythonLikeParser.RULE_dictorsetmaker);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 304;
         this.test();
         this.state = 305;
-        this.match(Python3Parser.COLON);
+        this.match(PythonLikeParser.COLON);
         this.state = 306;
         this.test();
         this.state = 314;
@@ -2904,12 +2904,12 @@ Python3Parser.prototype.dictorsetmaker = function() {
         while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
             if(_alt===1) {
                 this.state = 307;
-                this.match(Python3Parser.COMMA);
+                this.match(PythonLikeParser.COMMA);
 
                 this.state = 308;
                 this.test();
                 this.state = 309;
-                this.match(Python3Parser.COLON);
+                this.match(PythonLikeParser.COLON);
                 this.state = 310;
                 this.test(); 
             }
@@ -2921,9 +2921,9 @@ Python3Parser.prototype.dictorsetmaker = function() {
         this.state = 318;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
-        if(_la===Python3Parser.COMMA) {
+        if(_la===PythonLikeParser.COMMA) {
             this.state = 317;
-            this.match(Python3Parser.COMMA);
+            this.match(PythonLikeParser.COMMA);
         }
 
     } catch (re) {
@@ -2949,7 +2949,7 @@ function NumberContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = Python3Parser.RULE_number;
+    this.ruleIndex = PythonLikeParser.RULE_number;
     return this;
 }
 
@@ -2957,15 +2957,15 @@ NumberContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 NumberContext.prototype.constructor = NumberContext;
 
 NumberContext.prototype.DECIMAL_INTEGER = function() {
-    return this.getToken(Python3Parser.DECIMAL_INTEGER, 0);
+    return this.getToken(PythonLikeParser.DECIMAL_INTEGER, 0);
 };
 
 NumberContext.prototype.FLOAT_NUMBER = function() {
-    return this.getToken(Python3Parser.FLOAT_NUMBER, 0);
+    return this.getToken(PythonLikeParser.FLOAT_NUMBER, 0);
 };
 
 NumberContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof Python3Visitor ) {
+    if ( visitor instanceof PythonLikeVisitor ) {
         return visitor.visitNumber(this);
     } else {
         return visitor.visitChildren(this);
@@ -2975,18 +2975,18 @@ NumberContext.prototype.accept = function(visitor) {
 
 
 
-Python3Parser.NumberContext = NumberContext;
+PythonLikeParser.NumberContext = NumberContext;
 
-Python3Parser.prototype.number = function() {
+PythonLikeParser.prototype.number = function() {
 
     var localctx = new NumberContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 56, Python3Parser.RULE_number);
+    this.enterRule(localctx, 56, PythonLikeParser.RULE_number);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 320;
         _la = this._input.LA(1);
-        if(!(_la===Python3Parser.DECIMAL_INTEGER || _la===Python3Parser.FLOAT_NUMBER)) {
+        if(!(_la===PythonLikeParser.DECIMAL_INTEGER || _la===PythonLikeParser.FLOAT_NUMBER)) {
         this._errHandler.recoverInline(this);
         }
         else {
@@ -3008,4 +3008,4 @@ Python3Parser.prototype.number = function() {
 };
 
 
-exports.Python3Parser = Python3Parser;
+exports.PythonLikeParser = PythonLikeParser;

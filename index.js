@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 const antlr4 = require('antlr4');
-const Python3Lexer = require('./target/Python3Lexer.js');
-const Python3Parser = require('./target/Python3Parser.js');
+const PythonLikeLexer = require('./target/PythonLikeLexer.js');
+const PythonLikeParser = require('./target/PythonLikeParser.js');
 const Visitor = require('./codegeneration/Visitor.js');
 const fs = require('fs');
 const beautify = require('js-beautify').js;
@@ -25,12 +25,12 @@ if (optionsString) {
 
 // Common code
 const chars = new antlr4.InputStream(input);
-const lexer = new Python3Lexer.Python3Lexer(chars);
+const lexer = new PythonLikeLexer.PythonLikeLexer(chars);
 
 lexer.strictMode = false;
 
 const tokens = new antlr4.CommonTokenStream(lexer);
-const parser = new Python3Parser.Python3Parser(tokens);
+const parser = new PythonLikeParser.PythonLikeParser(tokens);
 
 // Result
 

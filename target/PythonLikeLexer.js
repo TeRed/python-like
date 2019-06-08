@@ -1,4 +1,4 @@
-// Generated from grammars/Python3.g4 by ANTLR 4.7.1
+// Generated from grammars/PythonLike.g4 by ANTLR 4.7.1
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 
@@ -447,149 +447,153 @@ var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
 
 var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new antlr4.dfa.DFA(ds, index); });
 
-function Python3Lexer(input) {
+function PythonLikeLexer(input) {
 	antlr4.Lexer.call(this, input);
     this._interp = new antlr4.atn.LexerATNSimulator(this, atn, decisionsToDFA, new antlr4.PredictionContextCache());
     return this;
 }
 
-Python3Lexer.prototype = Object.create(antlr4.Lexer.prototype);
-Python3Lexer.prototype.constructor = Python3Lexer;
+PythonLikeLexer.prototype = Object.create(antlr4.Lexer.prototype);
+PythonLikeLexer.prototype.constructor = PythonLikeLexer;
 
-Object.defineProperty(Python3Lexer.prototype, "atn", {
+Object.defineProperty(PythonLikeLexer.prototype, "atn", {
         get : function() {
                 return atn;
         }
 });
 
-Python3Lexer.EOF = antlr4.Token.EOF;
-Python3Lexer.T__0 = 1;
-Python3Lexer.T__1 = 2;
-Python3Lexer.T__2 = 3;
-Python3Lexer.T__3 = 4;
-Python3Lexer.T__4 = 5;
-Python3Lexer.T__5 = 6;
-Python3Lexer.DEF = 7;
-Python3Lexer.RETURN = 8;
-Python3Lexer.IF = 9;
-Python3Lexer.ELIF = 10;
-Python3Lexer.ELSE = 11;
-Python3Lexer.WHILE = 12;
-Python3Lexer.OR = 13;
-Python3Lexer.AND = 14;
-Python3Lexer.NOT = 15;
-Python3Lexer.NONE = 16;
-Python3Lexer.TRUE = 17;
-Python3Lexer.FALSE = 18;
-Python3Lexer.PASS = 19;
-Python3Lexer.CONTINUE = 20;
-Python3Lexer.BREAK = 21;
-Python3Lexer.NEWLINE = 22;
-Python3Lexer.NAME = 23;
-Python3Lexer.STRING_LITERAL = 24;
-Python3Lexer.DECIMAL_INTEGER = 25;
-Python3Lexer.FLOAT_NUMBER = 26;
-Python3Lexer.DOT = 27;
-Python3Lexer.STAR = 28;
-Python3Lexer.OPEN_PAREN = 29;
-Python3Lexer.CLOSE_PAREN = 30;
-Python3Lexer.COMMA = 31;
-Python3Lexer.COLON = 32;
-Python3Lexer.SEMI_COLON = 33;
-Python3Lexer.ASSIGN = 34;
-Python3Lexer.ADD = 35;
-Python3Lexer.MINUS = 36;
-Python3Lexer.DIV = 37;
-Python3Lexer.MOD = 38;
-Python3Lexer.LESS_THAN = 39;
-Python3Lexer.GREATER_THAN = 40;
-Python3Lexer.EQUALS = 41;
-Python3Lexer.GT_EQ = 42;
-Python3Lexer.LT_EQ = 43;
-Python3Lexer.NOT_EQ = 44;
-Python3Lexer.ADD_ASSIGN = 45;
-Python3Lexer.SUB_ASSIGN = 46;
-Python3Lexer.MULT_ASSIGN = 47;
-Python3Lexer.DIV_ASSIGN = 48;
-Python3Lexer.MOD_ASSIGN = 49;
-Python3Lexer.SKIP_ = 50;
-Python3Lexer.UNKNOWN_CHAR = 51;
+PythonLikeLexer.EOF = antlr4.Token.EOF;
+PythonLikeLexer.T__0 = 1;
+PythonLikeLexer.T__1 = 2;
+PythonLikeLexer.T__2 = 3;
+PythonLikeLexer.T__3 = 4;
+PythonLikeLexer.T__4 = 5;
+PythonLikeLexer.T__5 = 6;
+PythonLikeLexer.DEF = 7;
+PythonLikeLexer.RETURN = 8;
+PythonLikeLexer.IF = 9;
+PythonLikeLexer.ELIF = 10;
+PythonLikeLexer.ELSE = 11;
+PythonLikeLexer.WHILE = 12;
+PythonLikeLexer.OR = 13;
+PythonLikeLexer.AND = 14;
+PythonLikeLexer.NOT = 15;
+PythonLikeLexer.NONE = 16;
+PythonLikeLexer.TRUE = 17;
+PythonLikeLexer.FALSE = 18;
+PythonLikeLexer.PASS = 19;
+PythonLikeLexer.CONTINUE = 20;
+PythonLikeLexer.BREAK = 21;
+PythonLikeLexer.NEWLINE = 22;
+PythonLikeLexer.NAME = 23;
+PythonLikeLexer.STRING_LITERAL = 24;
+PythonLikeLexer.DECIMAL_INTEGER = 25;
+PythonLikeLexer.FLOAT_NUMBER = 26;
+PythonLikeLexer.DOT = 27;
+PythonLikeLexer.STAR = 28;
+PythonLikeLexer.OPEN_PAREN = 29;
+PythonLikeLexer.CLOSE_PAREN = 30;
+PythonLikeLexer.COMMA = 31;
+PythonLikeLexer.COLON = 32;
+PythonLikeLexer.SEMI_COLON = 33;
+PythonLikeLexer.ASSIGN = 34;
+PythonLikeLexer.ADD = 35;
+PythonLikeLexer.MINUS = 36;
+PythonLikeLexer.DIV = 37;
+PythonLikeLexer.MOD = 38;
+PythonLikeLexer.LESS_THAN = 39;
+PythonLikeLexer.GREATER_THAN = 40;
+PythonLikeLexer.EQUALS = 41;
+PythonLikeLexer.GT_EQ = 42;
+PythonLikeLexer.LT_EQ = 43;
+PythonLikeLexer.NOT_EQ = 44;
+PythonLikeLexer.ADD_ASSIGN = 45;
+PythonLikeLexer.SUB_ASSIGN = 46;
+PythonLikeLexer.MULT_ASSIGN = 47;
+PythonLikeLexer.DIV_ASSIGN = 48;
+PythonLikeLexer.MOD_ASSIGN = 49;
+PythonLikeLexer.SKIP_ = 50;
+PythonLikeLexer.UNKNOWN_CHAR = 51;
 
-Python3Lexer.prototype.channelNames = [ "DEFAULT_TOKEN_CHANNEL", "HIDDEN" ];
+PythonLikeLexer.prototype.channelNames = [ "DEFAULT_TOKEN_CHANNEL", "HIDDEN" ];
 
-Python3Lexer.prototype.modeNames = [ "DEFAULT_MODE" ];
+PythonLikeLexer.prototype.modeNames = [ "DEFAULT_MODE" ];
 
-Python3Lexer.prototype.literalNames = [ null, "'for'", "'in'", "'['", "']'", 
-                                        "'{'", "'}'", "'def'", "'return'", 
-                                        "'if'", "'elif'", "'else'", "'while'", 
-                                        "'or'", "'and'", "'not'", "'None'", 
-                                        "'True'", "'False'", "'pass'", "'continue'", 
-                                        "'break'", null, null, null, null, 
-                                        null, "'.'", "'*'", "'('", "')'", 
-                                        "','", "':'", "';'", "'='", "'+'", 
-                                        "'-'", "'/'", "'%'", "'<'", "'>'", 
-                                        "'=='", "'>='", "'<='", "'!='", 
-                                        "'+='", "'-='", "'*='", "'/='", 
-                                        "'%='" ];
+PythonLikeLexer.prototype.literalNames = [ null, "'for'", "'in'", "'['", 
+                                           "']'", "'{'", "'}'", "'def'", 
+                                           "'return'", "'if'", "'elif'", 
+                                           "'else'", "'while'", "'or'", 
+                                           "'and'", "'not'", "'None'", "'True'", 
+                                           "'False'", "'pass'", "'continue'", 
+                                           "'break'", null, null, null, 
+                                           null, null, "'.'", "'*'", "'('", 
+                                           "')'", "','", "':'", "';'", "'='", 
+                                           "'+'", "'-'", "'/'", "'%'", "'<'", 
+                                           "'>'", "'=='", "'>='", "'<='", 
+                                           "'!='", "'+='", "'-='", "'*='", 
+                                           "'/='", "'%='" ];
 
-Python3Lexer.prototype.symbolicNames = [ null, null, null, null, null, null, 
-                                         null, "DEF", "RETURN", "IF", "ELIF", 
-                                         "ELSE", "WHILE", "OR", "AND", "NOT", 
-                                         "NONE", "TRUE", "FALSE", "PASS", 
-                                         "CONTINUE", "BREAK", "NEWLINE", 
-                                         "NAME", "STRING_LITERAL", "DECIMAL_INTEGER", 
-                                         "FLOAT_NUMBER", "DOT", "STAR", 
-                                         "OPEN_PAREN", "CLOSE_PAREN", "COMMA", 
-                                         "COLON", "SEMI_COLON", "ASSIGN", 
-                                         "ADD", "MINUS", "DIV", "MOD", "LESS_THAN", 
-                                         "GREATER_THAN", "EQUALS", "GT_EQ", 
-                                         "LT_EQ", "NOT_EQ", "ADD_ASSIGN", 
-                                         "SUB_ASSIGN", "MULT_ASSIGN", "DIV_ASSIGN", 
-                                         "MOD_ASSIGN", "SKIP_", "UNKNOWN_CHAR" ];
+PythonLikeLexer.prototype.symbolicNames = [ null, null, null, null, null, 
+                                            null, null, "DEF", "RETURN", 
+                                            "IF", "ELIF", "ELSE", "WHILE", 
+                                            "OR", "AND", "NOT", "NONE", 
+                                            "TRUE", "FALSE", "PASS", "CONTINUE", 
+                                            "BREAK", "NEWLINE", "NAME", 
+                                            "STRING_LITERAL", "DECIMAL_INTEGER", 
+                                            "FLOAT_NUMBER", "DOT", "STAR", 
+                                            "OPEN_PAREN", "CLOSE_PAREN", 
+                                            "COMMA", "COLON", "SEMI_COLON", 
+                                            "ASSIGN", "ADD", "MINUS", "DIV", 
+                                            "MOD", "LESS_THAN", "GREATER_THAN", 
+                                            "EQUALS", "GT_EQ", "LT_EQ", 
+                                            "NOT_EQ", "ADD_ASSIGN", "SUB_ASSIGN", 
+                                            "MULT_ASSIGN", "DIV_ASSIGN", 
+                                            "MOD_ASSIGN", "SKIP_", "UNKNOWN_CHAR" ];
 
-Python3Lexer.prototype.ruleNames = [ "T__0", "T__1", "T__2", "T__3", "T__4", 
-                                     "T__5", "DEF", "RETURN", "IF", "ELIF", 
-                                     "ELSE", "WHILE", "OR", "AND", "NOT", 
-                                     "NONE", "TRUE", "FALSE", "PASS", "CONTINUE", 
-                                     "BREAK", "NEWLINE", "NAME", "STRING_LITERAL", 
-                                     "DECIMAL_INTEGER", "FLOAT_NUMBER", 
-                                     "DOT", "STAR", "OPEN_PAREN", "CLOSE_PAREN", 
-                                     "COMMA", "COLON", "SEMI_COLON", "ASSIGN", 
-                                     "ADD", "MINUS", "DIV", "MOD", "LESS_THAN", 
-                                     "GREATER_THAN", "EQUALS", "GT_EQ", 
-                                     "LT_EQ", "NOT_EQ", "ADD_ASSIGN", "SUB_ASSIGN", 
-                                     "MULT_ASSIGN", "DIV_ASSIGN", "MOD_ASSIGN", 
-                                     "SKIP_", "UNKNOWN_CHAR", "SHORT_STRING", 
-                                     "LONG_STRING", "LONG_STRING_ITEM", 
-                                     "LONG_STRING_CHAR", "STRING_ESCAPE_SEQ", 
-                                     "NON_ZERO_DIGIT", "DIGIT", "OCT_DIGIT", 
-                                     "HEX_DIGIT", "BIN_DIGIT", "POINT_FLOAT", 
-                                     "EXPONENT_FLOAT", "INT_PART", "FRACTION", 
-                                     "EXPONENT", "SHORT_BYTES", "LONG_BYTES", 
-                                     "LONG_BYTES_ITEM", "SHORT_BYTES_CHAR_NO_SINGLE_QUOTE", 
-                                     "SHORT_BYTES_CHAR_NO_DOUBLE_QUOTE", 
-                                     "LONG_BYTES_CHAR", "BYTES_ESCAPE_SEQ", 
-                                     "SPACES", "COMMENT", "LINE_JOINING", 
-                                     "ID_START", "ID_CONTINUE" ];
+PythonLikeLexer.prototype.ruleNames = [ "T__0", "T__1", "T__2", "T__3", 
+                                        "T__4", "T__5", "DEF", "RETURN", 
+                                        "IF", "ELIF", "ELSE", "WHILE", "OR", 
+                                        "AND", "NOT", "NONE", "TRUE", "FALSE", 
+                                        "PASS", "CONTINUE", "BREAK", "NEWLINE", 
+                                        "NAME", "STRING_LITERAL", "DECIMAL_INTEGER", 
+                                        "FLOAT_NUMBER", "DOT", "STAR", "OPEN_PAREN", 
+                                        "CLOSE_PAREN", "COMMA", "COLON", 
+                                        "SEMI_COLON", "ASSIGN", "ADD", "MINUS", 
+                                        "DIV", "MOD", "LESS_THAN", "GREATER_THAN", 
+                                        "EQUALS", "GT_EQ", "LT_EQ", "NOT_EQ", 
+                                        "ADD_ASSIGN", "SUB_ASSIGN", "MULT_ASSIGN", 
+                                        "DIV_ASSIGN", "MOD_ASSIGN", "SKIP_", 
+                                        "UNKNOWN_CHAR", "SHORT_STRING", 
+                                        "LONG_STRING", "LONG_STRING_ITEM", 
+                                        "LONG_STRING_CHAR", "STRING_ESCAPE_SEQ", 
+                                        "NON_ZERO_DIGIT", "DIGIT", "OCT_DIGIT", 
+                                        "HEX_DIGIT", "BIN_DIGIT", "POINT_FLOAT", 
+                                        "EXPONENT_FLOAT", "INT_PART", "FRACTION", 
+                                        "EXPONENT", "SHORT_BYTES", "LONG_BYTES", 
+                                        "LONG_BYTES_ITEM", "SHORT_BYTES_CHAR_NO_SINGLE_QUOTE", 
+                                        "SHORT_BYTES_CHAR_NO_DOUBLE_QUOTE", 
+                                        "LONG_BYTES_CHAR", "BYTES_ESCAPE_SEQ", 
+                                        "SPACES", "COMMENT", "LINE_JOINING", 
+                                        "ID_START", "ID_CONTINUE" ];
 
-Python3Lexer.prototype.grammarFileName = "Python3.g4";
+PythonLikeLexer.prototype.grammarFileName = "PythonLike.g4";
 
 
 
   let CommonToken = require('antlr4/Token').CommonToken;
-  let Python3Parser = require('./Python3Parser').Python3Parser;
+  let PythonLikeParser = require('./PythonLikeParser').PythonLikeParser;
 
-  let old_lexer = Python3Lexer;
-  Python3Lexer = function() {
+  let old_lexer = PythonLikeLexer;
+  PythonLikeLexer = function() {
     old_lexer.apply(this, arguments);
     this.reset.call(this);
   }
 
-  Python3Lexer.prototype = Object.create(old_lexer.prototype);
-  Python3Lexer.prototype.constructor = Python3Lexer;
+  PythonLikeLexer.prototype = Object.create(old_lexer.prototype);
+  PythonLikeLexer.prototype.constructor = PythonLikeLexer;
 
 
-  Python3Lexer.prototype.reset = function() {
+  PythonLikeLexer.prototype.reset = function() {
     // A queue where extra tokens are pushed on (see the NEWLINE lexer rule).
     this.token_queue = [];
 
@@ -602,7 +606,7 @@ Python3Lexer.prototype.grammarFileName = "Python3.g4";
     antlr4.Lexer.prototype.reset.call(this);
   };
 
-  Python3Lexer.prototype.emitToken = function(token) {
+  PythonLikeLexer.prototype.emitToken = function(token) {
     this._token = token;
     this.token_queue.push(token);
   };
@@ -614,17 +618,17 @@ Python3Lexer.prototype.grammarFileName = "Python3.g4";
    * literal.
    *
    */
-  Python3Lexer.prototype.nextToken = function() {
+  PythonLikeLexer.prototype.nextToken = function() {
     // Check if the end-of-file is ahead and there are still some DEDENTS expected.
-    if (this._input.LA(1) === Python3Parser.EOF && this.indents.length) {
+    if (this._input.LA(1) === PythonLikeParser.EOF && this.indents.length) {
 
       // Remove any trailing EOF tokens from our buffer.
       this.token_queue = this.token_queue.filter(function(val) {
-        return val.type !== Python3Parser.EOF;
+        return val.type !== PythonLikeParser.EOF;
       });
 
       // First emit an extra line break that serves as the end of the statement.
-      this.emitToken(this.commonToken(Python3Parser.NEWLINE, "\n"));
+      this.emitToken(this.commonToken(PythonLikeParser.NEWLINE, "\n"));
 
       // Now emit as much DEDENT tokens as needed.
       while (this.indents.length) {
@@ -633,18 +637,18 @@ Python3Lexer.prototype.grammarFileName = "Python3.g4";
       }
 
       // Put the EOF back on the token stream.
-      this.emitToken(this.commonToken(Python3Parser.EOF, "<EOF>"));
+      this.emitToken(this.commonToken(PythonLikeParser.EOF, "<EOF>"));
     }
 
     let next = antlr4.Lexer.prototype.nextToken.call(this);
     return this.token_queue.length ? this.token_queue.shift() : next;
   };
 
-  Python3Lexer.prototype.createDedent = function() {
-    return this.commonToken(Python3Parser.DEDENT, "");
+  PythonLikeLexer.prototype.createDedent = function() {
+    return this.commonToken(PythonLikeParser.DEDENT, "");
   }
 
-  Python3Lexer.prototype.commonToken = function(type, text) {
+  PythonLikeLexer.prototype.commonToken = function(type, text) {
     let stop = this.getCharIndex() - 1;
     let start = text.length ? stop - text.length + 1 : stop;
     return new CommonToken(this._tokenFactorySourcePair, type, antlr4.Lexer.DEFAULT_TOKEN_CHANNEL, start, stop);
@@ -658,7 +662,7 @@ Python3Lexer.prototype.grammarFileName = "Python3.g4";
   //  the replacement is a multiple of eight [...]"
   //
   //  -- https://docs.python.org/3.1/reference/lexical_analysis.html#indentation
-  Python3Lexer.prototype.getIndentationCount = function(whitespace) {
+  PythonLikeLexer.prototype.getIndentationCount = function(whitespace) {
     let count = 0;
     for (let i = 0; i < whitespace.length; i++) {
       if (whitespace[i] === '\t') {
@@ -670,12 +674,12 @@ Python3Lexer.prototype.grammarFileName = "Python3.g4";
     return count;
   }
 
-  Python3Lexer.prototype.atStartOfInput = function() {
+  PythonLikeLexer.prototype.atStartOfInput = function() {
     return this.getCharIndex() === 0;
   }
 
 
-Python3Lexer.prototype.action = function(localctx, ruleIndex, actionIndex) {
+PythonLikeLexer.prototype.action = function(localctx, ruleIndex, actionIndex) {
 	switch (ruleIndex) {
 	case 21:
 		this.NEWLINE_action(localctx, actionIndex);
@@ -691,7 +695,7 @@ Python3Lexer.prototype.action = function(localctx, ruleIndex, actionIndex) {
 	}
 };
 
-Python3Lexer.prototype.NEWLINE_action = function(localctx , actionIndex) {
+PythonLikeLexer.prototype.NEWLINE_action = function(localctx , actionIndex) {
 	switch (actionIndex) {
 	case 0:
 
@@ -704,7 +708,7 @@ Python3Lexer.prototype.NEWLINE_action = function(localctx , actionIndex) {
 		       // dedents and line breaks.
 		       this.skip();
 		     } else {
-		       this.emitToken(this.commonToken(Python3Parser.NEWLINE, newLine));
+		       this.emitToken(this.commonToken(PythonLikeParser.NEWLINE, newLine));
 
 		       let indent = this.getIndentationCount(spaces);
 		       let previous = this.indents.length ? this.indents[this.indents.length - 1] : 0;
@@ -714,7 +718,7 @@ Python3Lexer.prototype.NEWLINE_action = function(localctx , actionIndex) {
 		         this.skip();
 		       } else if (indent > previous) {
 		         this.indents.push(indent);
-		         this.emitToken(this.commonToken(Python3Parser.INDENT, spaces));
+		         this.emitToken(this.commonToken(PythonLikeParser.INDENT, spaces));
 		       } else {
 		         // Possibly emit more than 1 DEDENT token.
 		         while (this.indents.length && this.indents[this.indents.length - 1] > indent) {
@@ -730,7 +734,7 @@ Python3Lexer.prototype.NEWLINE_action = function(localctx , actionIndex) {
 	}
 };
 
-Python3Lexer.prototype.OPEN_PAREN_action = function(localctx , actionIndex) {
+PythonLikeLexer.prototype.OPEN_PAREN_action = function(localctx , actionIndex) {
 	switch (actionIndex) {
 	case 1:
 		this.opened++;
@@ -740,7 +744,7 @@ Python3Lexer.prototype.OPEN_PAREN_action = function(localctx , actionIndex) {
 	}
 };
 
-Python3Lexer.prototype.CLOSE_PAREN_action = function(localctx , actionIndex) {
+PythonLikeLexer.prototype.CLOSE_PAREN_action = function(localctx , actionIndex) {
 	switch (actionIndex) {
 	case 2:
 		this.opened--;
@@ -749,7 +753,7 @@ Python3Lexer.prototype.CLOSE_PAREN_action = function(localctx , actionIndex) {
 		throw "No registered action for:" + actionIndex;
 	}
 };
-Python3Lexer.prototype.sempred = function(localctx, ruleIndex, predIndex) {
+PythonLikeLexer.prototype.sempred = function(localctx, ruleIndex, predIndex) {
 	switch (ruleIndex) {
 		case 21:
 			return this.NEWLINE_sempred(localctx, predIndex);
@@ -758,7 +762,7 @@ Python3Lexer.prototype.sempred = function(localctx, ruleIndex, predIndex) {
     }
 };
 
-Python3Lexer.prototype.NEWLINE_sempred = function(localctx, predIndex) {
+PythonLikeLexer.prototype.NEWLINE_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 0:
 			return this.atStartOfInput();
@@ -769,5 +773,5 @@ Python3Lexer.prototype.NEWLINE_sempred = function(localctx, predIndex) {
 
 
 
-exports.Python3Lexer = Python3Lexer;
+exports.PythonLikeLexer = PythonLikeLexer;
 

@@ -1,6 +1,6 @@
-const Python3Visitor = require('../target/Python3Visitor').Python3Visitor;
+const PythonLikeVisitor = require('../target/PythonLikeVisitor').PythonLikeVisitor;
 
-class Visitor extends Python3Visitor {
+class Visitor extends PythonLikeVisitor {
 
   visitChildren(ctx) {
     return ctx.children

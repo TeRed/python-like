@@ -11,7 +11,7 @@
     "antlr:build": "npm run antlr:clean && npm run antlr:compile",
     "antlr:compile": "npm run help:antlr4-js",
     "antlr:clean": "rm -rf target",
-    "help:antlr4-js": "java -Xmx500M -cp '/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH' org.antlr.v4.Tool  -Dlanguage=JavaScript -lib grammars -o target -visitor -no-listener -Xexact-output-dir grammars/Python3.g4",
+    "help:antlr4-js": "java -Xmx500M -cp '/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH' org.antlr.v4.Tool  -Dlanguage=JavaScript -lib grammars -o target -visitor -no-listener -Xexact-output-dir grammars/PythonLike.g4",
     "docz:dev": "docz dev",
     "docz:build": "docz build"
   },

@@ -1,56 +1,23 @@
-/*
- * The MIT License (MIT)
- *
- * Copyright (c) 2014 by Bart Kiers
- *
- * Permission is hereby granted, free of charge, to any person
- * obtaining a copy of this software and associated documentation
- * files (the "Software"), to deal in the Software without
- * restriction, including without limitation the rights to use,
- * copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following
- * conditions:
- *
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
- * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- * OTHER DEALINGS IN THE SOFTWARE.
- *
- * Project      : python3-parser; an ANTLR4 grammar for Python 3
- *                https://github.com/bkiers/python3-parser
- * Developed by : Bart Kiers, bart@big-o.nl
- */
-grammar Python3;
-
-// All comments that start with "///" are copy-pasted from
-// The Python Language Reference: https://docs.python.org/3.3/reference/grammar.html
+grammar PythonLike;
 
 tokens { INDENT, DEDENT }
 
 @lexer::members {
 
   let CommonToken = require('antlr4/Token').CommonToken;
-  let Python3Parser = require('./Python3Parser').Python3Parser;
+  let PythonLikeParser = require('./PythonLikeParser').PythonLikeParser;
 
-  let old_lexer = Python3Lexer;
-  Python3Lexer = function() {
+  let old_lexer = PythonLikeLexer;
+  PythonLikeLexer = function() {
     old_lexer.apply(this, arguments);
     this.reset.call(this);
   }
 
-  Python3Lexer.prototype = Object.create(old_lexer.prototype);
-  Python3Lexer.prototype.constructor = Python3Lexer;
+  PythonLikeLexer.prototype = Object.create(old_lexer.prototype);
+  PythonLikeLexer.prototype.constructor = PythonLikeLexer;
 
 
-  Python3Lexer.prototype.reset = function() {
+  PythonLikeLexer.prototype.reset = function() {
     // A queue where extra tokens are pushed on (see the NEWLINE lexer rule).
     this.token_queue = [];
 
@@ -63,7 +30,7 @@ tokens { INDENT, DEDENT }
     antlr4.Lexer.prototype.reset.call(this);
   };
 
-  Python3Lexer.prototype.emitToken = function(token) {
+  PythonLikeLexer.prototype.emitToken = function(token) {
     this._token = token;
     this.token_queue.push(token);
   };
@@ -75,17 +42,17 @@ tokens { INDENT, DEDENT }
    * literal.
    *
    */
-  Python3Lexer.prototype.nextToken = function() {
+  PythonLikeLexer.prototype.nextToken = function() {
     // Check if the end-of-file is ahead and there are still some DEDENTS expected.
-    if (this._input.LA(1) === Python3Parser.EOF && this.indents.length) {
+    if (this._input.LA(1) === PythonLikeParser.EOF && this.indents.length) {
 
       // Remove any trailing EOF tokens from our buffer.
       this.token_queue = this.token_queue.filter(function(val) {
-        return val.type !== Python3Parser.EOF;
+        return val.type !== PythonLikeParser.EOF;
       });
 
       // First emit an extra line break that serves as the end of the statement.
-      this.emitToken(this.commonToken(Python3Parser.NEWLINE, "\n"));
+      this.emitToken(this.commonToken(PythonLikeParser.NEWLINE, "\n"));
 
       // Now emit as much DEDENT tokens as needed.
       while (this.indents.length) {
@@ -94,18 +61,18 @@ tokens { INDENT, DEDENT }
       }
 
       // Put the EOF back on the token stream.
-      this.emitToken(this.commonToken(Python3Parser.EOF, "<EOF>"));
+      this.emitToken(this.commonToken(PythonLikeParser.EOF, "<EOF>"));
     }
 
     let next = antlr4.Lexer.prototype.nextToken.call(this);
     return this.token_queue.length ? this.token_queue.shift() : next;
   };
 
-  Python3Lexer.prototype.createDedent = function() {
-    return this.commonToken(Python3Parser.DEDENT, "");
+  PythonLikeLexer.prototype.createDedent = function() {
+    return this.commonToken(PythonLikeParser.DEDENT, "");
   }
 
-  Python3Lexer.prototype.commonToken = function(type, text) {
+  PythonLikeLexer.prototype.commonToken = function(type, text) {
     let stop = this.getCharIndex() - 1;
     let start = text.length ? stop - text.length + 1 : stop;
     return new CommonToken(this._tokenFactorySourcePair, type, antlr4.Lexer.DEFAULT_TOKEN_CHANNEL, start, stop);
@@ -119,7 +86,7 @@ tokens { INDENT, DEDENT }
   //  the replacement is a multiple of eight [...]"
   //
   //  -- https://docs.python.org/3.1/reference/lexical_analysis.html#indentation
-  Python3Lexer.prototype.getIndentationCount = function(whitespace) {
+  PythonLikeLexer.prototype.getIndentationCount = function(whitespace) {
     let count = 0;
     for (let i = 0; i < whitespace.length; i++) {
       if (whitespace[i] === '\t') {
@@ -131,7 +98,7 @@ tokens { INDENT, DEDENT }
     return count;
   }
 
-  Python3Lexer.prototype.atStartOfInput = function() {
+  PythonLikeLexer.prototype.atStartOfInput = function() {
     return this.getCharIndex() === 0;
   }
 }
@@ -140,41 +107,31 @@ tokens { INDENT, DEDENT }
  * parser rules
  */
 
-/// file_input: (NEWLINE | stmt)* ENDMARKER
 file_input
  : ( NEWLINE | stmt )* EOF
  ;
 
-/// funcdef: 'def' NAME parameters ['->' test] ':' suite
 funcdef
  : DEF NAME parameters ':' suite
  ;
 
-/// parameters: '(' [typedargslist] ')'
 parameters
  : '(' argslist? ')'
  ;
 
-/// typedargslist: (tfpdef ['=' test] (',' tfpdef ['=' test])* [','
-///                ['*' [tfpdef] (',' tfpdef ['=' test])* [',' '**' tfpdef] | '**' tfpdef]]
-///              |  '*' [tfpdef] (',' tfpdef ['=' test])* [',' '**' tfpdef] | '**' tfpdef)
 argslist
  : NAME ( '=' test )? ( ',' NAME ( '=' test )? )*
  ;
 
-/// stmt: simple_stmt | compound_stmt
 stmt
  : simple_stmt
  | compound_stmt
  ;
 
-/// simple_stmt: small_stmt (';' small_stmt)* [';'] NEWLINE
 simple_stmt
  : small_stmt ( ';' small_stmt )* ';'? NEWLINE
  ;
 
-/// small_stmt: (expr_stmt | del_stmt | pass_stmt | flow_stmt |
-///              import_stmt | global_stmt | nonlocal_stmt | assert_stmt)
 small_stmt
  : expr_stmt
  | PASS
@@ -183,16 +140,12 @@ small_stmt
  | RETURN test?
  ;
 
-/// expr_stmt: testlist_star_expr (augassign (yield_expr|testlist) |
-///                      ('=' (yield_expr|testlist_star_expr))*)
 expr_stmt
  : test ( augassign test
           | ( '=' test )*
         )
  ;
 
-/// augassign: ('+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' |
-///             '<<=' | '>>=' | '**=' | '//=')
 augassign
  : '+='
  | '-='
@@ -201,7 +154,6 @@ augassign
  | '/='
  ;
 
-/// compound_stmt: if_stmt | while_stmt | for_stmt | try_stmt | with_stmt | funcdef | classdef | decorated
 compound_stmt
  : if_stmt
  | while_stmt
@@ -209,12 +161,10 @@ compound_stmt
  | funcdef
  ;
 
-/// if_stmt: 'if' test ':' suite ('elif' test ':' suite)* ['else' ':' suite]
 if_stmt
  : IF test ':' suite ( ELIF test ':' suite )* ( ELSE ':' suite )?
  ;
 
-/// while_stmt: 'while' test ':' suite ['else' ':' suite]
 while_stmt
  : WHILE test ':' suite
  ;
@@ -223,41 +173,32 @@ for_stmt
  : 'for' atom 'in' testlist ':' suite
  ;
 
-/// suite: simple_stmt | NEWLINE INDENT stmt+ DEDENT
 suite
  : simple_stmt
  | NEWLINE INDENT stmt+ DEDENT
  ;
 
-/// test: or_test ['if' or_test 'else' test] | lambdef
 test
  : or_test
  ;
- 
-/// or_test: and_test ('or' and_test)*
+
 or_test
  : and_test ( OR and_test )*
  ;
 
-/// and_test: not_test ('and' not_test)*
 and_test
  : not_test ( AND not_test )*
  ;
 
-/// not_test: 'not' not_test | comparison
 not_test
  : NOT not_test
  | comparison
  ;
 
-/// comparison: star_expr (comp_op star_expr)*
 comparison
  : expr ( comp_op expr )*
  ;
 
-/// # <> isn't actually a valid comparison operator in Python. It's here for the
-/// # sake of a __future__ import described in PEP 401
-/// comp_op: '<'|'>'|'=='|'>='|'<='|'<>'|'!='|'in'|'not' 'in'|'is'|'is' 'not'
 comp_op
  : '<'
  | '>'
@@ -267,14 +208,12 @@ comp_op
  | '!='
  ;
 
-/// arith_expr: term (('+'|'-') term)*
 expr
  : term ( '+' term
         | '-' term
         )*
  ;
 
-/// term: factor (('*'|'/'|'%'|'//') factor)*
 term
  : factor ( '*' factor
           | '/' factor
@@ -282,22 +221,16 @@ term
           )*
  ;
 
-/// factor: ('+'|'-'|'~') factor | power
 factor
  : '+' factor
  | '-' factor
  | power
  ;
 
-/// power: atom trailer* ['**' factor]
 power
  : atom trailer*
  ;
 
-/// atom: ('(' [yield_expr|testlist] ')' |
-///        '[' [testlist] ']' |
-///        '{' [dictorsetmaker] '}' |
-///        NAME | NUMBER | STRING+ | '...' | 'None' | 'True' | 'False')
 atom
  : '(' ( testlist )? ')'
  | '[' (testlist)? ']'
@@ -310,12 +243,10 @@ atom
  | FALSE
  ;
 
-/// testlist: test ( comp_for | (',' test)* [','] )
 testlist
  : test ( ',' test )*
  ;
 
-/// trailer: '(' [arglist] ')' | '[' subscriptlist ']' | '.' NAME
 trailer
  : '(' testlist? ')'
  | '[' test ']'
@@ -364,7 +295,7 @@ NEWLINE
        // dedents and line breaks.
        this.skip();
      } else {
-       this.emitToken(this.commonToken(Python3Parser.NEWLINE, newLine));
+       this.emitToken(this.commonToken(PythonLikeParser.NEWLINE, newLine));
 
        let indent = this.getIndentationCount(spaces);
        let previous = this.indents.length ? this.indents[this.indents.length - 1] : 0;
@@ -374,7 +305,7 @@ NEWLINE
          this.skip();
        } else if (indent > previous) {
          this.indents.push(indent);
-         this.emitToken(this.commonToken(Python3Parser.INDENT, spaces));
+         this.emitToken(this.commonToken(PythonLikeParser.INDENT, spaces));
        } else {
          // Possibly emit more than 1 DEDENT token.
          while (this.indents.length && this.indents[this.indents.length - 1] > indent) {
