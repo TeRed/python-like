@@ -21,7 +21,7 @@ fibo()
 
 # Simple print
 def dupaDebuger():
-    print("DUPA")
+    print("TEST")
 
 dupaDebuger()
 
