@@ -301,6 +301,7 @@ power
 atom
  : '(' ( testlist )? ')'
  | '[' (testlist)? ']'
+ | '{' (dictorsetmaker)? '}'
  | NAME
  | number
  | STRING_LITERAL+
@@ -320,6 +321,10 @@ trailer
  | '[' test ']'
  | '.' NAME
  ;
+
+dictorsetmaker
+  : test ':' test (',' (test ':' test))* (',')?
+  ;
 
 number
  : DECIMAL_INTEGER

@@ -174,6 +174,12 @@ Python3Visitor.prototype.visitTrailer = function(ctx) {
 };
 
 
+// Visit a parse tree produced by Python3Parser#dictorsetmaker.
+Python3Visitor.prototype.visitDictorsetmaker = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by Python3Parser#number.
 Python3Visitor.prototype.visitNumber = function(ctx) {
   return this.visitChildren(ctx);

@@ -10,6 +10,11 @@ const beautify = require('js-beautify').js;
 // Reading CLIs
 const [, , inputFile, optionsString] = process.argv;
 
+if(!inputFile) {
+    console.warn('File to compiler is required!');
+    return 1;
+}
+
 const input = fs.readFileSync(inputFile).toString();
 
 if (optionsString) {

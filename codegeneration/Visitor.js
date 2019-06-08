@@ -135,6 +135,17 @@ class Visitor extends Python3Visitor {
 
   // visitTrailer(ctx) {}
 
+  visitDictorsetmaker(ctx) {
+    if (ctx.children.length === 4) {
+      ctx.children.pop()
+    }
+    else if (ctx.children.length % 2 === 0) {
+      ctx.children.pop()
+    }
+
+    return this.visitChildren(ctx);
+  }
+
   // visitNumber(ctx) {}
 
   visitTerminal(ctx) {
