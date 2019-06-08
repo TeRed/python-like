@@ -8,20 +8,14 @@ const fs = require('fs');
 const beautify = require('js-beautify').js;
 
 // Reading CLIs
-const [, , inputFile, optionsString] = process.argv;
+const [, , inputFile, out, outFileName, option] = process.argv;
 
-if(!inputFile) {
-    console.warn('File to compiler is required!');
+if (!inputFile) {
+    console.warn('File to compile is required!');
     return 1;
 }
 
 const input = fs.readFileSync(inputFile).toString() + '\n';
-
-if (optionsString) {
-    var [, ...options] = optionsString.split('');
-} else {
-    var options = [];
-}
 
 // Common code
 const chars = new antlr4.InputStream(input);
@@ -37,14 +31,13 @@ const parser = new PythonLikeParser.PythonLikeParser(tokens);
 const AST = parser.file_input();
 var result = Visitor.visitFile_input(AST);
 
-if (options.includes('b')) {
-    result = beautify(result, { indent_size: 2, space_in_empty_paren: true });
-}
+if (out && out.trim() === '-o') {
+    if (option && option.trim() === '-b') {
+        result = beautify(result, { indent_size: 2, space_in_empty_paren: true });
+    }
 
-if(options.includes('e')) {
-    eval(result);
+    fs.writeFileSync(outFileName, result, 'utf8');
     return;
 }
 
-console.log(result);
-return result;
+eval(result);

@@ -1,10 +1,10 @@
 {
   "name": "python-like",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Source to source compiler using ANTLR",
   "main": "index.js",
   "bin": {
-    "pyl": "index.js"
+    "pyli": "index.js"
   },
   "scripts": {
     "start": "node index.js",
